@@ -10,10 +10,8 @@ import styles from './HomeScreen.style';
 interface IHomeScreen {}
 
 const HomeScreen: React.FC<IHomeScreen> = ({}) => {
-
   return (
     <SafeAreaView>
-      <Text>Header:</Text>
       <Header />
     </SafeAreaView>
   );
