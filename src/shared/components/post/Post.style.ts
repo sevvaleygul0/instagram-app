@@ -60,4 +60,36 @@ export default StyleSheet.create({
     marginTop: 4,
     paddingLeft: 12,
   },
+  iconButtonImageStyle: {
+    width: 20,
+    height: 20,
+  },
+  currentUserProfilePhoto: {
+    width: 30,
+    height: 30,
+    borderRadius: 30,
+  },
+  currentUserCommentContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 12,
+    marginTop: 12,
+  },
+  addCommentButton: {
+    paddingLeft: 12,
+    justifyContent: 'center',
+  },
+  addCommentText: {
+    color: '#adadad',
+    fontFamily: 'Merriweather',
+    fontSize: 12,
+  },
+  userActionButtonImage: {
+    width: 18,
+    height: 18,
+  },
+  userAddEmojiButton: {
+    width: 12,
+    height: 12,
+  },
 });

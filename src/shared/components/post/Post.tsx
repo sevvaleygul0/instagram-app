@@ -48,28 +48,28 @@ const Post: React.FC<IPostProps> = ({userData}) => {
     <View style={styles.iconButtonsContainer}>
       <TouchableOpacity style={styles.iconButtonStyle}>
         <Image
-          style={styles.dotImageStyle}
+          style={styles.iconButtonImageStyle}
           source={require('../../../assets/icons/header/heart.png')}
           resizeMode={Image.resizeMode.contain}
         />
       </TouchableOpacity>
       <TouchableOpacity style={styles.iconButtonStyle}>
         <Image
-          style={styles.dotImageStyle}
+          style={styles.iconButtonImageStyle}
           source={require('../../../assets/icons/post/chat-bubble.png')}
           resizeMode={Image.resizeMode.contain}
         />
       </TouchableOpacity>
       <TouchableOpacity style={styles.iconButtonStyle}>
         <Image
-          style={styles.dotImageStyle}
+          style={styles.iconButtonImageStyle}
           source={require('../../../assets/icons/post/dm.png')}
           resizeMode={Image.resizeMode.contain}
         />
       </TouchableOpacity>
       <TouchableOpacity style={styles.saveIconButtonStyle}>
         <Image
-          style={styles.dotImageStyle}
+          style={styles.iconButtonImageStyle}
           source={require('../../../assets/icons/post/save.png')}
           resizeMode={Image.resizeMode.contain}
         />
@@ -93,6 +93,41 @@ const Post: React.FC<IPostProps> = ({userData}) => {
     </TouchableOpacity>
   );
 
+  const renderCurrentUserComment = () => (
+    <View style={styles.currentUserCommentContainer}>
+      <Image
+        style={styles.currentUserProfilePhoto}
+        source={profilePhoto}
+        resizeMode={Image.resizeMode.contain}
+      />
+      <TouchableOpacity style={styles.addCommentButton}>
+        <Text style={styles.addCommentText}>Add a comment...</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={{marginLeft: 'auto', paddingRight: 20}}>
+        <Image
+          style={styles.userActionButtonImage}
+          source={require('../../../assets/icons/post/love.png')}
+          resizeMode={Image.resizeMode.contain}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={{paddingRight: 20}}>
+        <Image
+          style={styles.userActionButtonImage}
+          source={require('../../../assets/icons/post/raise-hand.png')}
+          resizeMode={Image.resizeMode.contain}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={{paddingRight: 12}}>
+        <Image
+          style={styles.userAddEmojiButton}
+          source={require('../../../assets/icons/post/add-comment.png')}
+          resizeMode={Image.resizeMode.contain}
+        />
+      </TouchableOpacity>
+    </View>
+  );
+
   return (
     <View style={styles.container}>
       {renderHeader()}
@@ -100,6 +135,7 @@ const Post: React.FC<IPostProps> = ({userData}) => {
       {renderIconButtonsContainer()}
       {renderLikeNumber()}
       {renderComments()}
+      {renderCurrentUserComment()}
     </View>
   );
 };
