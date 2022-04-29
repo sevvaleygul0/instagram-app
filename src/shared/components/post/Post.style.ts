@@ -32,4 +32,16 @@ export default StyleSheet.create({
     width: 24,
     height: 24,
   },
+  iconButtonsContainer: {
+    marginTop: 12,
+    flexDirection: 'row',
+    paddingLeft: 12,
+  },
+  iconButtonStyle: {
+    marginRight: 16,
+  },
+  saveIconButtonStyle: {
+    marginLeft: 'auto',
+    paddingRight: 12,
+  },
 });

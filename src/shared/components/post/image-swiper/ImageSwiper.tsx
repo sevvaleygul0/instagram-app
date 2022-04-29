@@ -20,8 +20,6 @@ interface IProps {
   images: IImage[];
   imageWidth?: number;
   imageHeight?: number;
-  onPageSelected: any;
-  initialPage: number;
 }
 
 interface IState {
@@ -40,7 +38,7 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
   scrollToInitialPosition = () => {
     try {
       this.scrollViewRef.scrollTo({
-        x: ScreenWidth * (this.props.initialPage - 1) || 0,
+        x: 0,
       });
     } catch (err) {
       console.error('Initial Position Scrolling Exception: ', err);
@@ -66,12 +64,7 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
       event.nativeEvent.contentOffset.x / Dimensions.get('window').width,
     );
     if (this.state.currentPage !== newPage) {
-      this.setState(
-        {currentPage: newPage},
-        () =>
-          this.props.onPageSelected &&
-          this.props.onPageSelected(this.state.currentPage),
-      );
+      this.setState({currentPage: newPage});
     }
   }
 
@@ -86,6 +79,7 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
         onScroll={e => this.handleOnScroll(e)}
         scrollEventThrottle={5}
         contentContainerStyle={{
+          marginTop: 0.5,
           alignItems: 'center',
           justifyContent: 'center',
         }}

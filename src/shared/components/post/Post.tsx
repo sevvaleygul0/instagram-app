@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {USER_DATA} from '../../constants/mock-data';
 import Image from 'react-native-fast-image';
 
 /**
@@ -45,10 +44,44 @@ const Post: React.FC<IPostProps> = ({userData}) => {
     />
   );
 
+  const renderIconButtonsContainer = () => (
+    <View style={styles.iconButtonsContainer}>
+      <TouchableOpacity style={styles.iconButtonStyle}>
+        <Image
+          style={styles.dotImageStyle}
+          source={require('../../../assets/icons/header/heart.png')}
+          resizeMode={Image.resizeMode.contain}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.iconButtonStyle}>
+        <Image
+          style={styles.dotImageStyle}
+          source={require('../../../assets/icons/post/chat-bubble.png')}
+          resizeMode={Image.resizeMode.contain}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.iconButtonStyle}>
+        <Image
+          style={styles.dotImageStyle}
+          source={require('../../../assets/icons/post/dm.png')}
+          resizeMode={Image.resizeMode.contain}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.saveIconButtonStyle}>
+        <Image
+          style={styles.dotImageStyle}
+          source={require('../../../assets/icons/post/save.png')}
+          resizeMode={Image.resizeMode.contain}
+        />
+      </TouchableOpacity>
+    </View>
+  );
+
   return (
     <View style={styles.container}>
       {renderHeader()}
       {renderSwiper()}
+      {renderIconButtonsContainer()}
     </View>
   );
 };
