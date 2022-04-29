@@ -44,4 +44,20 @@ export default StyleSheet.create({
     marginLeft: 'auto',
     paddingRight: 12,
   },
+  likeNumberTextStyle: {
+    fontFamily: 'Merriweather-Bold',
+    fontSize: 12,
+    color: '#111',
+  },
+  likeNumberButton: {
+    marginTop: 12,
+    paddingLeft: 12,
+  },
+  commentButtonTextStyle: {
+    fontFamily: 'Merriweather',
+    fontSize: 12,
+    color: '#adadad',
+    marginTop: 4,
+    paddingLeft: 12,
+  },
 });

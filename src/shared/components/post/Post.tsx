@@ -13,7 +13,7 @@ interface IPostProps {
 }
 
 const Post: React.FC<IPostProps> = ({userData}) => {
-  const {name, profilePhoto, postDetail} = userData;
+  const {name, profilePhoto, postDetail, likeNumber, commentNumber} = userData;
 
   const renderHeader = () => (
     <View style={styles.headerContainer}>
@@ -77,11 +77,29 @@ const Post: React.FC<IPostProps> = ({userData}) => {
     </View>
   );
 
+  const renderLikeNumber = () => (
+    <TouchableOpacity style={styles.likeNumberButton}>
+      <Text style={styles.likeNumberTextStyle}>
+        {likeNumber.toString()} likes
+      </Text>
+    </TouchableOpacity>
+  );
+
+  const renderComments = () => (
+    <TouchableOpacity>
+      <Text style={styles.commentButtonTextStyle}>
+        View all {commentNumber} comments
+      </Text>
+    </TouchableOpacity>
+  );
+
   return (
     <View style={styles.container}>
       {renderHeader()}
       {renderSwiper()}
       {renderIconButtonsContainer()}
+      {renderLikeNumber()}
+      {renderComments()}
     </View>
   );
 };

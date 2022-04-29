@@ -25,5 +25,7 @@ export const USER_DATA = [
         },
       },
     ],
+    likeNumber: 33.678,
+    commentNumber: 76,
   },
 ];
