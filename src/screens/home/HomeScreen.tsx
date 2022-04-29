@@ -10,7 +10,6 @@ import styles from './HomeScreen.style';
 interface IHomeScreen {}
 
 const HomeScreen: React.FC<IHomeScreen> = ({}) => {
-  const [state, setState] = useState<any>();
 
   return (
     <SafeAreaView>

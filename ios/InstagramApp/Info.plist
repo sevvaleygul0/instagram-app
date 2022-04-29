@@ -39,7 +39,15 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
-		 <string>AntDesign.ttf</string>
+		<string>Merriweather-Black.ttf</string>
+		<string>Merriweather-BlackItalic.ttf</string>
+		<string>Merriweather-Bold.ttf</string>
+		<string>Merriweather-BoldItalic.ttf</string>
+		<string>Merriweather-Italic.ttf</string>
+		<string>Merriweather-Light.ttf</string>
+		<string>Merriweather-LightItalic.ttf</string>
+		<string>Merriweather-Regular.ttf</string>
+		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>
 		<string>Feather.ttf</string>
@@ -47,15 +55,14 @@
 		<string>FontAwesome5_Brands.ttf</string>
 		<string>FontAwesome5_Regular.ttf</string>
 		<string>FontAwesome5_Solid.ttf</string>
+		<string>Fontisto.ttf</string>
 		<string>Foundation.ttf</string>
 		<string>Ionicons.ttf</string>
-		<string>MaterialIcons.ttf</string>
 		<string>MaterialCommunityIcons.ttf</string>
-		<string>SimpleLineIcons.ttf</string>
+		<string>MaterialIcons.ttf</string>
 		<string>Octicons.ttf</string>
+		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
-		<string>Fontisto.ttf</string>	
-	</array>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
