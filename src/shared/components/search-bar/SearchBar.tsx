@@ -14,7 +14,7 @@ import styles from './SearchBar.style';
 interface ISearchBarProps {
   value?: string;
   inputRef?: any;
-  onChangeText?: () => void;
+  onChangeText?: (text: string) => void;
   onPress?: () => void;
 }
 

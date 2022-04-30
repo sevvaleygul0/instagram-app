@@ -1,4 +1,4 @@
-import {ViewStyle, StyleSheet, Dimensions} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 const ScreenWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({

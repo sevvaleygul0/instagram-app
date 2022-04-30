@@ -14,8 +14,6 @@ interface IGridContainerProps {
 }
 
 const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
-  console.log(DISCOVERY_POST_TYPE_IMAGE[data.type]);
-
   const renderSmallContainer = () => (
     <Image style={styles.gridImageStyle} source={data.asset} resizeMode="cover">
       <Image
