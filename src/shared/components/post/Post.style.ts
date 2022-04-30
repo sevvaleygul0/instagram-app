@@ -91,4 +91,27 @@ export default StyleSheet.create({
     width: 12,
     height: 12,
   },
+  timeTextStyle: {
+    paddingLeft: 12,
+    color: '#adadad',
+    fontFamily: 'Merriweather',
+    fontSize: 10,
+  },
+  timeAndTranslationContainer: {
+    flexDirection: 'row',
+    marginTop: 4,
+    alignItems: 'center',
+  },
+  dotStyle: {
+    backgroundColor: '#111',
+    width: 3,
+    height: 3,
+    borderRadius: 2,
+    marginLeft: 8,
+  },
+  seeTranslation: {
+    paddingLeft: 8,
+    fontFamily: 'Merriweather-Bold',
+    fontSize: 10,
+  },
 });

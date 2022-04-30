@@ -126,6 +126,14 @@ const Post: React.FC<IPostProps> = ({userData}) => {
     </View>
   );
 
+  const renderTimeAndTranslationContainer = () => (
+    <View style={styles.timeAndTranslationContainer}>
+      <Text style={styles.timeTextStyle}>23 mminitus ago</Text>
+      <View style={styles.dotStyle} />
+      <Text style={styles.seeTranslation}>See translation</Text>
+    </View>
+  );
+
   return (
     <View style={styles.container}>
       {renderHeader()}
@@ -134,6 +142,7 @@ const Post: React.FC<IPostProps> = ({userData}) => {
       {renderLikeNumber()}
       {renderComments()}
       {renderCurrentUserComment()}
+      {renderTimeAndTranslationContainer()}
     </View>
   );
 };
