@@ -72,7 +72,6 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
           {...this.props}>
           {images &&
             images.map((image: any, index: number) => {
-              console.log(DISCOVERY_POST_VIDEOS[image.asset]);
               const imageSource =
                 image.asset && DISCOVERY_POST_VIDEOS[image.asset]
                   ? DISCOVERY_POST_VIDEOS[image.asset]

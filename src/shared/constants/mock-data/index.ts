@@ -108,7 +108,7 @@ export const DISCOVERY_DATA = [
     name: 'City Travel',
     country: 'England',
     isVideo: true,
-    asset: 'CITY',
+    asset: POST_VIDEO_NAMES.CITY,
   },
   {
     id: 2,
@@ -145,7 +145,7 @@ export const DISCOVERY_DATA = [
     name: 'Flowers',
     country: 'Germany',
     isVideo: true,
-    asset: 'MUSIC',
+    asset: POST_VIDEO_NAMES.MUSIC,
   },
   {
     id: 7,
@@ -159,7 +159,7 @@ export const DISCOVERY_DATA = [
     name: 'Phones',
     country: 'America',
     isVideo: true,
-    asset: 'PHONE',
+    asset: POST_VIDEO_NAMES.PHONE,
   },
   {
     id: 9,
@@ -219,7 +219,7 @@ export const DISCOVERY_DATA = [
     name: 'Pawel Czerwinski',
     country: 'Germany',
     isVideo: true,
-    asset: 'DOG',
+    asset: POST_VIDEO_NAMES.DOG,
   },
   {
     id: 17,

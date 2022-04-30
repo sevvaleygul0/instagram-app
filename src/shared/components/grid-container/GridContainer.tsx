@@ -1,7 +1,10 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import Image from 'react-native-fast-image';
-import {DISCOVERY_POST_TYPE_IMAGE} from '../../constants';
+import {
+  DISCOVERY_POST_TYPE_IMAGE,
+  DISCOVERY_POST_VIDEOS,
+} from '../../constants';
 import Video from 'react-native-video';
 
 /**
@@ -17,10 +20,10 @@ interface IGridContainerProps {
 const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
   const {isVideo, asset} = data;
 
-  const uriHandler = (image: any) => ({
-    uri: image.uri || image.URL || image.url || image.URI,
-  });
-  const imageSource = asset ? asset : uriHandler(data);
+  const imageSource =
+    asset && DISCOVERY_POST_VIDEOS[asset]
+      ? DISCOVERY_POST_VIDEOS[asset]
+      : {uri: asset};
 
   const renderSmallContainer = () =>
     isVideo ? (

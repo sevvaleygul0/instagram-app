@@ -19,6 +19,7 @@ export const POST_VIDEO_NAMES = {
 export const DISCOVERY_POST_VIDEOS: any = {
   MUSIC: require('../../assets/videos/music.mp4'),
   DOG: require('../../assets/videos/dog.mp4'),
+  PHONE: require('../../assets/videos/phone.mp4'),
   SURFING: require('../../assets/videos/surfing.mp4'),
   CITY: require('../../assets/videos/city.mp4'),
 };

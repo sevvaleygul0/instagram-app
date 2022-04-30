@@ -16,8 +16,6 @@ interface IPostProps {
 const Post: React.FC<IPostProps> = ({userData, onPressTranslation}) => {
   const {name, profilePhoto, postDetail, likes, comments} = userData;
 
-  console.log('postDetail: ', postDetail);
-
   const renderHeader = () => (
     <View style={styles.headerContainer}>
       <Image

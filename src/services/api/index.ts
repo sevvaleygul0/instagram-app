@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {POST_DATA_URL} from './constants';
+import {DISCOVERY_DATA_URL, POST_DATA_URL} from './constants';
 
 export const fetchPostData = () => {
   return new Promise((resolve, reject) => {
@@ -10,7 +10,23 @@ export const fetchPostData = () => {
           response && resolve(response.data);
         })
         .catch(error => {
-          console.log(error);
+          reject(error);
+        });
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+
+export const fetchDiscoveryData = () => {
+  return new Promise((resolve, reject) => {
+    try {
+      axios
+        .get(DISCOVERY_DATA_URL)
+        .then(response => {
+          response && resolve(response.data);
+        })
+        .catch(error => {
           reject(error);
         });
     } catch (error) {

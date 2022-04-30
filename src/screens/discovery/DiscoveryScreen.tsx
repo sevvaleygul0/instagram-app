@@ -1,6 +1,7 @@
-import React, {useRef, useState} from 'react';
-import {FlatList} from 'react-native';
+import React, {useEffect, useRef, useState} from 'react';
+import {Alert, FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {fetchDiscoveryData} from '../../services/api';
 import GridContainer from '../../shared/components/grid-container/GridContainer';
 import Header from '../../shared/components/header/Header';
 import SearchBar from '../../shared/components/search-bar/SearchBar';
@@ -14,9 +15,19 @@ interface IDiscoveryScreen {}
 
 const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
   const [searchValue, setSearchValue] = useState<any>();
-  const [postList, setPostList] = useState(DISCOVERY_DATA);
+  const [postList, setPostList] = useState();
 
   const inputRef = useRef();
+
+  useEffect(() => {
+    fetchDiscoveryData()
+      .then((data: any) => {
+        data && setPostList(data);
+      })
+      .catch(() => {
+        Alert.alert('Alert', 'Something went wrong');
+      });
+  });
 
   const renderListItem = (item: any) => <GridContainer data={item} />;
 
@@ -30,7 +41,7 @@ const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
   );
 
   const onChangeSearchText = (text: string) => {
-    const newData = DISCOVERY_DATA.filter(item => {
+    const newData: any = DISCOVERY_DATA.filter(item => {
       const itemData = item.name ? item.name.toUpperCase() : ''.toUpperCase();
       const textData = text.toUpperCase();
       return itemData.indexOf(textData) > -1;
