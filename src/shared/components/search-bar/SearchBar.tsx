@@ -1,5 +1,10 @@
 import React, {useRef} from 'react';
-import {TextInput, TouchableWithoutFeedback, View} from 'react-native';
+import {
+  TextInput,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import Image from 'react-native-fast-image';
 /**
  * ? Local Imports
@@ -20,23 +25,22 @@ const SearchBar: React.FC<ISearchBarProps> = ({
   onPress,
 }) => {
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
-      <View style={styles.container}>
-        <Image
-          style={styles.searchImageStyle}
-          source={require('../../../assets/icons/search/search.png')}
-          resizeMode={Image.resizeMode.contain}
-        />
-        <TextInput
-          ref={inputRef}
-          placeholder="Search"
-          value={value}
-          onChangeText={onChangeText}
-          style={styles.searchBarStyle}
-          placeholderTextColor="#adadad"
-        />
-      </View>
-    </TouchableWithoutFeedback>
+    <View style={styles.container}>
+      <Image
+        style={styles.searchImageStyle}
+        source={require('../../../assets/icons/search/search.png')}
+        resizeMode={Image.resizeMode.contain}
+      />
+      <TextInput
+        ref={inputRef}
+        placeholder="Search"
+        value={value}
+        onFocus={onPress}
+        onChangeText={onChangeText}
+        style={styles.searchBarStyle}
+        placeholderTextColor="#adadad"
+      />
+    </View>
   );
 };
 

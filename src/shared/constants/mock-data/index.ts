@@ -1,3 +1,8 @@
+const POST_TYPE = {
+  MULTIPLE: 'MULTIPLE',
+  REELS: 'REELS',
+};
+
 export const USER_DATA = [
   {
     id: 0,
@@ -72,5 +77,91 @@ export const USER_DATA = [
     ],
     likes: 33.678,
     comments: 76,
+  },
+];
+
+export const DISCOVERY_DATA = [
+  {
+    id: 0,
+    name: 'Adrina Merly',
+    country: 'America',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    },
+  },
+  {
+    id: 1,
+    name: 'Jason Stat',
+    country: 'England',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1516825295207-81549bdd014c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+    },
+  },
+  {
+    id: 2,
+    name: 'Jonny Depp',
+    country: 'America',
+    type: POST_TYPE.REELS,
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1525721653822-f9975a57cd4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2190&q=80',
+    },
+  },
+  {
+    id: 3,
+    name: 'Tuana Maden',
+    country: 'Turkey',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1503944168849-8bf86875bbd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2674&q=80',
+    },
+  },
+  {
+    id: 4,
+    type: POST_TYPE.REELS,
+    name: 'Ben Salt',
+    country: 'Sweden',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1622601848423-7236c500a0af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+    },
+  },
+  {
+    id: 5,
+    name: 'Ben Salt',
+    country: 'Sweden',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1594767169572-04fe914b61de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2274&q=80',
+    },
+  },
+  {
+    id: 6,
+    name: 'Adalheida Paul',
+    country: 'Germany',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1598644612563-82fbfa1bf2dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1341&q=80',
+    },
+  },
+  {
+    id: 7,
+    name: 'Valter Jonn',
+    country: 'Germany',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1622602070618-3005cb2f79a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',
+    },
+  },
+  {
+    id: 8,
+    name: 'Carl Boris',
+    country: 'Germany',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1615402020061-337a2a5a97ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80',
+    },
+  },
+  {
+    id: 9,
+    name: 'Doğa Zengin',
+    country: 'Turkey',
+    type: POST_TYPE.MULTIPLE,
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1533231323158-932d0ccb1afb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+    },
   },
 ];

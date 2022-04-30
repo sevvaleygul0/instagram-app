@@ -5,7 +5,7 @@ import Video from 'react-native-video';
 /**
  * ? Local Imports
  */
-import styles, {_imageStyle} from './ImageSwiper.style';
+import styles, {_imageStyle, _dot} from './ImageSwiper.style';
 
 export interface IImage {
   uri?: string;
@@ -83,12 +83,14 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
               return (
                 <ScrollView horizontal key={index}>
                   {image.isVideo ? (
-                    <Video
-                      onError={(error: any) => console.log('error: ', error)}
-                      source={imageSource}
-                      resizeMode="cover"
-                      style={_imageStyle(imageHeight, imageWidth)}
-                    />
+                    <>
+                      {/* <Video
+                        onError={(error: any) => console.log('error: ', error)}
+                        source={imageSource}
+                        resizeMode="cover"
+                        style={_imageStyle(imageHeight, imageWidth)}
+                      /> */}
+                    </>
                   ) : (
                     <Image
                       style={_imageStyle(imageHeight, imageWidth)}
@@ -100,25 +102,9 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
               );
             })}
         </ScrollView>
-        <View
-          style={{
-            top: 26,
-            flexDirection: 'row',
-            alignItems: 'center',
-            alignSelf: 'center',
-          }}>
-          {images.map((_, index) => (
-            <View
-              style={{
-                height: 6,
-                width: 6,
-                borderRadius: 6,
-                backgroundColor:
-                  this.state.currentPage === index ? '#0195F6' : '#ccc',
-                zIndex: 99,
-                marginLeft: 5,
-              }}
-            />
+        <View style={styles.dotsContainer}>
+          {images.map((_, _index) => (
+            <View key={_index} style={_dot(this.state.currentPage, _index)} />
           ))}
         </View>
       </>
