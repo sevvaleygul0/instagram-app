@@ -115,11 +115,10 @@ export const DISCOVERY_DATA = [
   },
   {
     id: 1,
-    name: 'Jason Stat',
+    name: 'City Travel',
     country: 'England',
-    asset: {
-      uri: 'https://images.unsplash.com/photo-1516825295207-81549bdd014c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
-    },
+    isVideo: true,
+    asset: require('../../../assets/videos/city.mp4'),
   },
   {
     id: 2,
@@ -157,11 +156,10 @@ export const DISCOVERY_DATA = [
   },
   {
     id: 6,
-    name: 'Adalheida Paul',
+    name: 'Flowers',
     country: 'Germany',
-    asset: {
-      uri: 'https://images.unsplash.com/photo-1598644612563-82fbfa1bf2dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1341&q=80',
-    },
+    isVideo: true,
+    asset: require('../../../assets/videos/music.mp4'),
   },
   {
     id: 7,
@@ -173,11 +171,10 @@ export const DISCOVERY_DATA = [
   },
   {
     id: 8,
-    name: 'Carl Boris',
-    country: 'Germany',
-    asset: {
-      uri: 'https://images.unsplash.com/photo-1615402020061-337a2a5a97ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80',
-    },
+    name: 'Phones',
+    country: 'America',
+    isVideo: true,
+    asset: require('../../../assets/videos/phone.mp4'),
   },
   {
     id: 9,
@@ -201,9 +198,8 @@ export const DISCOVERY_DATA = [
     id: 11,
     name: 'Berry Berry',
     country: 'Sweden',
-    asset: {
-      uri: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2669&q=80',
-    },
+    isVideo: true,
+    asset: require('../../../assets/videos/surfing.mp4'),
   },
   {
     id: 12,
@@ -243,9 +239,8 @@ export const DISCOVERY_DATA = [
     id: 16,
     name: 'Pawel Czerwinski',
     country: 'Germany',
-    asset: {
-      uri: 'https://images.unsplash.com/photo-1558470598-a5dda9640f68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',
-    },
+    isVideo: true,
+    asset: require('../../../assets/videos/dog.mp4'),
   },
   {
     id: 17,
@@ -253,6 +248,30 @@ export const DISCOVERY_DATA = [
     country: 'Italy',
     asset: {
       uri: 'https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
+    },
+  },
+  {
+    id: 18,
+    name: 'Jason Stat',
+    country: 'England',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1516825295207-81549bdd014c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+    },
+  },
+  {
+    id: 19,
+    name: 'Adalheida Paul',
+    country: 'Germany',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1598644612563-82fbfa1bf2dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1341&q=80',
+    },
+  },
+  {
+    id: 20,
+    name: 'Carl Boris',
+    country: 'Germany',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1615402020061-337a2a5a97ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80',
     },
   },
 ];

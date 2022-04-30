@@ -5,7 +5,7 @@ import Video from 'react-native-video';
 /**
  * ? Local Imports
  */
-import styles, {_imageStyle, _dot} from './ImageSwiper.style';
+import styles, {_dot} from './ImageSwiper.style';
 
 export interface IImage {
   uri?: string;
