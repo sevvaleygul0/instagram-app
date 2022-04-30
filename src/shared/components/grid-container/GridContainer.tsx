@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import Image from 'react-native-fast-image';
 import {DISCOVERY_POST_TYPE_IMAGE} from '../../constants';
 
@@ -31,11 +31,11 @@ const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
   );
 
   return (
-    <View>
+    <TouchableOpacity>
       {renderSmallContainer()}
       {/* {renderBigContainer()}
       {renderSmallContainer()} */}
-    </View>
+    </TouchableOpacity>
   );
 };
 

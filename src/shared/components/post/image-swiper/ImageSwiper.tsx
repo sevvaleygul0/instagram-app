@@ -98,11 +98,13 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
               );
             })}
         </ScrollView>
-        <View style={styles.dotsContainer}>
-          {images.map((_, _index) => (
-            <View key={_index} style={_dot(this.state.currentPage, _index)} />
-          ))}
-        </View>
+        {images.length > 1 && (
+          <View style={styles.dotsContainer}>
+            {images.map((_, _index) => (
+              <View key={_index} style={_dot(this.state.currentPage, _index)} />
+            ))}
+          </View>
+        )}
       </>
     );
   }
