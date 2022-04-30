@@ -3,14 +3,6 @@ import {StyleSheet, Dimensions} from 'react-native';
 const ScreenWidth = Dimensions.get('window').width;
 const ScreenHeight = Dimensions.get('window').height;
 
-export const _imageStyle = (
-  imageHeight = ScreenHeight,
-  imageWidth = ScreenWidth,
-) => ({
-  width: imageWidth,
-  height: imageHeight,
-});
-
 export const _dot = (currentPage: number, index: number) => ({
   height: 6,
   width: 6,
@@ -22,9 +14,12 @@ export const _dot = (currentPage: number, index: number) => ({
 
 export default StyleSheet.create({
   contentContainerStyle: {
-    marginTop: 0.5,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  imageStyle: {
+    width: ScreenWidth,
+    height: 450,
   },
   dotsContainer: {
     top: 26,

@@ -10,8 +10,8 @@ export default StyleSheet.create({
   },
   gridPostTypeImage: {
     position: 'absolute',
-    right: 4,
-    top: 4,
+    right: 5,
+    top: 5,
     height: 18,
     width: 18,
   },

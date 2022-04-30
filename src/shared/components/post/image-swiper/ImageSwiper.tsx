@@ -19,8 +19,6 @@ interface IProps {
   onSwipeTop?: any;
   onSwipeBottom?: any;
   images: IImage[];
-  imageWidth?: number;
-  imageHeight?: number;
 }
 
 interface IState {
@@ -61,7 +59,7 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
   }
 
   render() {
-    const {images, imageWidth, imageHeight} = this.props;
+    const {images} = this.props;
     return (
       <>
         <ScrollView
@@ -87,11 +85,11 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
                       onError={(error: any) => console.log('error: ', error)}
                       source={imageSource}
                       resizeMode="cover"
-                      style={_imageStyle(imageHeight, imageWidth)}
+                      style={styles.imageStyle}
                     />
                   ) : (
                     <Image
-                      style={_imageStyle(imageHeight, imageWidth)}
+                      style={styles.imageStyle}
                       source={imageSource}
                       {...this.props}
                     />

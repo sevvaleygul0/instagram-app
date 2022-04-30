@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text} from 'react-native';
 import Image from 'react-native-fast-image';
 import {DISCOVERY_POST_TYPE_IMAGE} from '../../constants';
@@ -21,7 +21,7 @@ const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
       <Image
         style={styles.gridPostTypeImage}
         source={DISCOVERY_POST_TYPE_IMAGE[data.type]}
-        resizeMode="center"
+        resizeMode="cover"
       />
     </Image>
   );
