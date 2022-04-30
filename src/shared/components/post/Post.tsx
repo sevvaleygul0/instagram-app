@@ -9,22 +9,26 @@ import styles from './Post.style';
 import ImageSwiper from './image-swiper/ImageSwiper';
 
 interface IPostProps {
-  userData: any;
+  userData?: any;
   onPressTranslation?: () => void;
 }
 
 const Post: React.FC<IPostProps> = ({userData, onPressTranslation}) => {
   const {name, profilePhoto, postDetail, likes, comments} = userData;
 
+  console.log('postDetail: ', postDetail);
+
   const renderHeader = () => (
     <View style={styles.headerContainer}>
       <Image
         style={styles.profileImageStyle}
-        source={profilePhoto}
+        source={{
+          uri: profilePhoto,
+        }}
         resizeMode="cover"
       />
       <View style={styles.usernameContainer}>
-        <Text style={styles.usernameTextStyle}>{name}</Text>
+        <Text style={styles.usernameTextStyle}>{name || null}</Text>
       </View>
       <TouchableOpacity style={styles.headerRightButton}>
         <Image
@@ -36,14 +40,15 @@ const Post: React.FC<IPostProps> = ({userData, onPressTranslation}) => {
     </View>
   );
 
-  const renderSwiper = () => (
-    <ImageSwiper
-      imageHeight={350}
-      onSwipeTop={() => alert('onSwipeTop')}
-      onSwipeBottom={() => alert('onSwipeBottom')}
-      images={postDetail}
-    />
-  );
+  const renderSwiper = () =>
+    postDetail && (
+      <ImageSwiper
+        imageHeight={350}
+        onSwipeTop={() => alert('onSwipeTop')}
+        onSwipeBottom={() => alert('onSwipeBottom')}
+        images={postDetail}
+      />
+    );
 
   const renderIconButtonsContainer = () => (
     <View style={styles.iconButtonsContainer}>
@@ -80,14 +85,16 @@ const Post: React.FC<IPostProps> = ({userData, onPressTranslation}) => {
 
   const renderLikeNumber = () => (
     <TouchableOpacity style={styles.likeNumberButton}>
-      <Text style={styles.likeNumberTextStyle}>{likes.toString()} likes</Text>
+      <Text style={styles.likeNumberTextStyle}>
+        {likes?.toString() || null} likes
+      </Text>
     </TouchableOpacity>
   );
 
   const renderComments = () => (
     <TouchableOpacity>
       <Text style={styles.commentButtonTextStyle}>
-        {`View all ${comments} comments`}
+        {`View all ${comments} comments` || null}
       </Text>
     </TouchableOpacity>
   );
@@ -96,7 +103,7 @@ const Post: React.FC<IPostProps> = ({userData, onPressTranslation}) => {
     <View style={styles.currentUserCommentContainer}>
       <Image
         style={styles.currentUserProfilePhoto}
-        source={profilePhoto}
+        source={{uri: profilePhoto}}
         resizeMode="cover"
       />
       <TouchableOpacity style={styles.addCommentButton}>

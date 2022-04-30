@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Image, ScrollView, Dimensions, View} from 'react-native';
 
 import Video from 'react-native-video';
+import {DISCOVERY_POST_VIDEOS} from '../../../constants';
 /**
  * ? Local Imports
  */
@@ -44,10 +45,6 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
     }
   };
 
-  uriHandler = (image: any) => ({
-    uri: image.uri || image.URL || image.url || image.URI,
-  });
-
   handleOnScroll(event: any) {
     // ? calculate screenIndex by contentOffset and screen width
     const newPage = parseInt(
@@ -75,9 +72,12 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
           {...this.props}>
           {images &&
             images.map((image: any, index: number) => {
-              const imageSource = image.asset
-                ? image.asset
-                : this.uriHandler(image);
+              console.log(DISCOVERY_POST_VIDEOS[image.asset]);
+              const imageSource =
+                image.asset && DISCOVERY_POST_VIDEOS[image.asset]
+                  ? DISCOVERY_POST_VIDEOS[image.asset]
+                  : {uri: image.asset};
+
               return (
                 <ScrollView horizontal key={index}>
                   {image.isVideo ? (
