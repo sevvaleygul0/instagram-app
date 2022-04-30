@@ -17,6 +17,14 @@ const Header: React.FC<IHeaderProps> = ({
   onLikeButton,
   onDirectMessageButton,
 }) => {
+  const renderInstagramName = () => (
+    <Image
+      style={styles.igLogoStyle}
+      tintColor="#111"
+      source={require('../../../assets/icons/header/ig-logo.png')}
+      resizeMode={Image.resizeMode.contain}
+    />
+  );
   const renderPlusButton = () => (
     <TouchableOpacity style={styles.rightbuttonStyle} onPress={onPlusButton}>
       <Image
@@ -51,7 +59,7 @@ const Header: React.FC<IHeaderProps> = ({
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titleTextStyle}>Instagram</Text>
+      {renderInstagramName()}
       <View style={styles.rightButtonsContainer}>
         {renderPlusButton()}
         {renderHeartButon()}

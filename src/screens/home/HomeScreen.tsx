@@ -16,6 +16,8 @@ const HomeScreen: React.FC<IHomeScreen> = ({}) => {
   const renderPostList = () => (
     <FlatList
       data={USER_DATA}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{paddingBottom: 60}}
       renderItem={({item}) => <Post userData={item} />}
     />
   );

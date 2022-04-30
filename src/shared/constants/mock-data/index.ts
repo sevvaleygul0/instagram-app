@@ -3,13 +3,13 @@ export const USER_DATA = [
     id: 0,
     name: 'Blake Swanson',
     profilePhoto: {
-      uri: 'https://elements-twenty20-photos-0.imgix.net/production/uploads/items/06d31f23-9552-40e5-bfa8-59d11a01e43d/source?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1400&s=b928c670ddad2168f09175aa800e3d7c',
+      uri: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
     },
     postDetail: [
       {
         id: 0,
         asset: {
-          uri: 'https://envato-shoebox-0.imgix.net/f05b/56a8-3ca7-42cb-8352-75f8a6f3369e/_DSC4546.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=800&s=2424817fe7b7ce503ca991283cc5eaab',
+          uri: 'https://images.unsplash.com/photo-1558293842-c0fd3db86157?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=722&q=80',
         },
       },
       {
@@ -20,12 +20,57 @@ export const USER_DATA = [
       },
       {
         id: 2,
+        isVideo: true,
         asset: {
-          uri: 'https://player.vimeo.com/video/389937875?title=0&portrait=0&byline=0&autoplay=1',
+          uri: 'https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+        },
+      },
+      {
+        id: 3,
+        isVideo: true,
+        asset: {
+          uri: 'https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
         },
       },
     ],
-    likeNumber: 33.678,
-    commentNumber: 76,
+    likes: 33.678,
+    comments: 76,
+  },
+  {
+    id: 0,
+    name: 'Blake Swanson',
+    profilePhoto: {
+      uri: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    },
+    postDetail: [
+      {
+        id: 0,
+        asset: {
+          uri: 'https://images.unsplash.com/photo-1558293842-c0fd3db86157?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=722&q=80',
+        },
+      },
+      {
+        id: 1,
+        asset: {
+          uri: 'https://envato-shoebox-0.imgix.net/ea3b/7e03-5957-4f84-b356-e5c1fa15607b/DSC_8311.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=800&s=5112cf383b532e3dab9731fe9da4e26f',
+        },
+      },
+      {
+        id: 2,
+        isVideo: true,
+        asset: {
+          uri: 'https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+        },
+      },
+      {
+        id: 3,
+        isVideo: true,
+        asset: {
+          uri: 'https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+        },
+      },
+    ],
+    likes: 33.678,
+    comments: 76,
   },
 ];

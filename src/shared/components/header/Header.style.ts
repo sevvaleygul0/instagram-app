@@ -21,4 +21,9 @@ export default StyleSheet.create({
   rightbuttonStyle: {
     marginRight: 16,
   },
+  igLogoStyle: {
+    width: 150,
+    height: 35,
+    left: -20,
+  },
 });

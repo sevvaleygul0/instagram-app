@@ -3,20 +3,19 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
     marginTop: 8,
+    marginBottom: 16,
   },
   headerContainer: {
-    borderTopWidth: 0.2,
-    borderBottomWidth: 0.2,
-    borderColor: '#adadad',
     flexDirection: 'row',
     paddingLeft: 12,
     padding: 4,
+    height: 50,
     alignItems: 'center',
   },
   profileImageStyle: {
-    width: 45,
-    height: 45,
-    borderRadius: 45,
+    width: 30,
+    height: 30,
+    borderRadius: 30,
   },
   usernameTextStyle: {
     fontFamily: 'Merriweather-Bold',

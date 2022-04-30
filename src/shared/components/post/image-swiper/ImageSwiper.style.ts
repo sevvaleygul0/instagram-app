@@ -11,4 +11,10 @@ export const _imageStyle = (
   height: imageHeight,
 });
 
-export default StyleSheet.create({});
+export default StyleSheet.create({
+  contentContainerStyle: {
+    marginTop: 0.5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});

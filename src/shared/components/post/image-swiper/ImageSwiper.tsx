@@ -1,10 +1,11 @@
 import * as React from 'react';
-import {Image, ScrollView, Dimensions} from 'react-native';
+import {Image, ScrollView, Dimensions, View} from 'react-native';
+
+import Video from 'react-native-video';
 /**
  * ? Local Imports
  */
-import {_imageStyle} from './ImageSwiper.style';
-const ScreenWidth = Dimensions.get('window').width;
+import styles, {_imageStyle} from './ImageSwiper.style';
 
 export interface IImage {
   uri?: string;
@@ -45,15 +46,6 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
     }
   };
 
-  handleSwipeGestures = (e, item, index) => {
-    const {onSwipeBottom, onSwipeTop} = this.props;
-    if (e.nativeEvent.contentOffset.y < 0) {
-      onSwipeBottom && onSwipeBottom(item);
-    } else {
-      onSwipeTop && onSwipeTop(item);
-    }
-  };
-
   uriHandler = (image: any) => ({
     uri: image.uri || image.URL || image.url || image.URI,
   });
@@ -71,40 +63,65 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
   render() {
     const {images, imageWidth, imageHeight} = this.props;
     return (
-      <ScrollView
-        ref={ref => (this.scrollViewRef = ref)}
-        horizontal
-        pagingEnabled
-        alwaysBounceHorizontal
-        onScroll={e => this.handleOnScroll(e)}
-        scrollEventThrottle={5}
-        contentContainerStyle={{
-          marginTop: 0.5,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-        onLayout={this.scrollToInitialPosition}
-        {...this.props}>
-        {images &&
-          images.map((image: IImage, index: number) => {
-            const imageSource = image.asset
-              ? image.asset
-              : this.uriHandler(image);
-            return (
-              <ScrollView
-                key={index}
-                onScrollEndDrag={e =>
-                  this.handleSwipeGestures(e, image, index)
-                }>
-                <Image
-                  style={_imageStyle(imageHeight, imageWidth)}
-                  source={imageSource}
-                  {...this.props}
-                />
-              </ScrollView>
-            );
-          })}
-      </ScrollView>
+      <>
+        <ScrollView
+          ref={ref => (this.scrollViewRef = ref)}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          alwaysBounceHorizontal
+          onScroll={e => this.handleOnScroll(e)}
+          scrollEventThrottle={5}
+          contentContainerStyle={styles.contentContainerStyle}
+          onLayout={this.scrollToInitialPosition}
+          {...this.props}>
+          {images &&
+            images.map((image: any, index: number) => {
+              const imageSource = image.asset
+                ? image.asset
+                : this.uriHandler(image);
+              return (
+                <ScrollView horizontal key={index}>
+                  {image.isVideo ? (
+                    <Video
+                      onError={(error: any) => console.log('error: ', error)}
+                      source={imageSource}
+                      resizeMode="cover"
+                      style={_imageStyle(imageHeight, imageWidth)}
+                    />
+                  ) : (
+                    <Image
+                      style={_imageStyle(imageHeight, imageWidth)}
+                      source={imageSource}
+                      {...this.props}
+                    />
+                  )}
+                </ScrollView>
+              );
+            })}
+        </ScrollView>
+        <View
+          style={{
+            top: 26,
+            flexDirection: 'row',
+            alignItems: 'center',
+            alignSelf: 'center',
+          }}>
+          {images.map((_, index) => (
+            <View
+              style={{
+                height: 6,
+                width: 6,
+                borderRadius: 6,
+                backgroundColor:
+                  this.state.currentPage === index ? '#0195F6' : '#ccc',
+                zIndex: 99,
+                marginLeft: 5,
+              }}
+            />
+          ))}
+        </View>
+      </>
     );
   }
 }

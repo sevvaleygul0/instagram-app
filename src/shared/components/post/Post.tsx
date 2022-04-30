@@ -13,14 +13,14 @@ interface IPostProps {
 }
 
 const Post: React.FC<IPostProps> = ({userData}) => {
-  const {name, profilePhoto, postDetail, likeNumber, commentNumber} = userData;
+  const {name, profilePhoto, postDetail, likes, comments} = userData;
 
   const renderHeader = () => (
     <View style={styles.headerContainer}>
       <Image
         style={styles.profileImageStyle}
         source={profilePhoto}
-        resizeMode={Image.resizeMode.contain}
+        resizeMode="cover"
       />
       <View style={styles.usernameContainer}>
         <Text style={styles.usernameTextStyle}>{name}</Text>
@@ -29,7 +29,7 @@ const Post: React.FC<IPostProps> = ({userData}) => {
         <Image
           style={styles.dotImageStyle}
           source={require('../../../assets/icons/post/dots.png')}
-          resizeMode={Image.resizeMode.contain}
+          resizeMode="contain"
         />
       </TouchableOpacity>
     </View>
@@ -79,16 +79,14 @@ const Post: React.FC<IPostProps> = ({userData}) => {
 
   const renderLikeNumber = () => (
     <TouchableOpacity style={styles.likeNumberButton}>
-      <Text style={styles.likeNumberTextStyle}>
-        {likeNumber.toString()} likes
-      </Text>
+      <Text style={styles.likeNumberTextStyle}>{likes.toString()} likes</Text>
     </TouchableOpacity>
   );
 
   const renderComments = () => (
     <TouchableOpacity>
       <Text style={styles.commentButtonTextStyle}>
-        View all {commentNumber} comments
+        {`View all ${comments} comments`}
       </Text>
     </TouchableOpacity>
   );
@@ -98,7 +96,7 @@ const Post: React.FC<IPostProps> = ({userData}) => {
       <Image
         style={styles.currentUserProfilePhoto}
         source={profilePhoto}
-        resizeMode={Image.resizeMode.contain}
+        resizeMode="cover"
       />
       <TouchableOpacity style={styles.addCommentButton}>
         <Text style={styles.addCommentText}>Add a comment...</Text>
