@@ -21,7 +21,7 @@ const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
       <Image
         style={styles.gridPostTypeImage}
         source={DISCOVERY_POST_TYPE_IMAGE[data.type]}
-        resizeMode="cover"
+        resizeMode="center"
       />
     </Image>
   );

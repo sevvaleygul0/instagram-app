@@ -10,9 +10,10 @@ import ImageSwiper from './image-swiper/ImageSwiper';
 
 interface IPostProps {
   userData: any;
+  onPressTranslation?: () => void;
 }
 
-const Post: React.FC<IPostProps> = ({userData}) => {
+const Post: React.FC<IPostProps> = ({userData, onPressTranslation}) => {
   const {name, profilePhoto, postDetail, likes, comments} = userData;
 
   const renderHeader = () => (
@@ -130,7 +131,9 @@ const Post: React.FC<IPostProps> = ({userData}) => {
     <View style={styles.timeAndTranslationContainer}>
       <Text style={styles.timeTextStyle}>23 mminitus ago</Text>
       <View style={styles.dotStyle} />
-      <Text style={styles.seeTranslation}>See translation</Text>
+      <TouchableOpacity onPress={onPressTranslation}>
+        <Text style={styles.seeTranslation}>See translation</Text>
+      </TouchableOpacity>
     </View>
   );
 

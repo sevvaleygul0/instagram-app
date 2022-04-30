@@ -83,14 +83,12 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
               return (
                 <ScrollView horizontal key={index}>
                   {image.isVideo ? (
-                    <>
-                      {/* <Video
-                        onError={(error: any) => console.log('error: ', error)}
-                        source={imageSource}
-                        resizeMode="cover"
-                        style={_imageStyle(imageHeight, imageWidth)}
-                      /> */}
-                    </>
+                    <Video
+                      onError={(error: any) => console.log('error: ', error)}
+                      source={imageSource}
+                      resizeMode="cover"
+                      style={_imageStyle(imageHeight, imageWidth)}
+                    />
                   ) : (
                     <Image
                       style={_imageStyle(imageHeight, imageWidth)}

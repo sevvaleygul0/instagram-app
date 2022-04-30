@@ -30,53 +30,69 @@ export const USER_DATA = [
           uri: 'https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
         },
       },
-      {
-        id: 3,
-        isVideo: true,
-        asset: {
-          uri: 'https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
-        },
-      },
     ],
     likes: 33.678,
     comments: 76,
   },
   {
-    id: 0,
-    name: 'Blake Swanson',
+    id: 1,
+    name: 'Movie Time',
     profilePhoto: {
-      uri: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      uri: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2659&q=80',
     },
     postDetail: [
       {
         id: 0,
-        asset: {
-          uri: 'https://images.unsplash.com/photo-1558293842-c0fd3db86157?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=722&q=80',
-        },
-      },
-      {
-        id: 1,
-        asset: {
-          uri: 'https://envato-shoebox-0.imgix.net/ea3b/7e03-5957-4f84-b356-e5c1fa15607b/DSC_8311.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=800&s=5112cf383b532e3dab9731fe9da4e26f',
-        },
-      },
-      {
-        id: 2,
-        isVideo: true,
-        asset: {
-          uri: 'https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-        },
-      },
-      {
-        id: 3,
         isVideo: true,
         asset: {
           uri: 'https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
         },
       },
+
+      {
+        id: 1,
+        asset: {
+          uri: 'https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNwYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+        },
+      },
+      {
+        id: 2,
+        asset: {
+          uri: 'https://images.unsplash.com/photo-1597635201981-308a4bfd0e55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+        },
+      },
     ],
-    likes: 33.678,
-    comments: 76,
+    likes: 1.005,
+    comments: 12,
+  },
+  {
+    id: 1,
+    name: 'Music Time',
+    profilePhoto: {
+      uri: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
+    },
+    postDetail: [
+      {
+        id: 0,
+        isVideo: true,
+        asset: require('../../../assets/videos/music.mp4'),
+      },
+
+      {
+        id: 1,
+        asset: {
+          uri: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+        },
+      },
+      {
+        id: 2,
+        asset: {
+          uri: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2669&q=80',
+        },
+      },
+    ],
+    likes: 768,
+    comments: 105,
   },
 ];
 
