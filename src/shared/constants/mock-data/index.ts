@@ -164,4 +164,71 @@ export const DISCOVERY_DATA = [
       uri: 'https://images.unsplash.com/photo-1533231323158-932d0ccb1afb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
     },
   },
+  {
+    id: 10,
+    name: 'Adriana April',
+    country: 'America',
+    type: POST_TYPE.MULTIPLE,
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1586907835000-f692bbd4c9e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1261&q=80',
+    },
+  },
+  {
+    id: 11,
+    name: 'Berry Berry',
+    country: 'Sweden',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2669&q=80',
+    },
+  },
+  {
+    id: 12,
+    name: 'Berry Berry',
+    country: 'Italy',
+    type: POST_TYPE.MULTIPLE,
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1464468164664-850fcaf6be4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2648&q=80',
+    },
+  },
+  {
+    id: 13,
+    name: 'Adem Top',
+    country: 'America',
+    type: POST_TYPE.REELS,
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1514926255734-79b2e9ef2501?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
+    },
+  },
+  {
+    id: 14,
+    name: 'Candy RE',
+    country: 'America',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1580556065382-d907f4839442?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
+    },
+  },
+  {
+    id: 15,
+    name: 'Adem Chiristina',
+    country: 'America',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1482849737880-498de71dda8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1294&q=80',
+    },
+  },
+  {
+    id: 16,
+    name: 'Pawel Czerwinski',
+    country: 'Germany',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1558470598-a5dda9640f68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',
+    },
+  },
+  {
+    id: 17,
+    name: 'Ryan Spencer',
+    country: 'Italy',
+    asset: {
+      uri: 'https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
+    },
+  },
 ];
