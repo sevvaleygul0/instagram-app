@@ -9,13 +9,17 @@ import SearchBar from '../../shared/components/search-bar/SearchBar';
 import styles from './HomeScreen.style';
 import {USER_DATA} from '../../shared/constants/mock-data';
 import Post from '../../shared/components/post/Post';
+import {SCREENS} from '../../shared/constants';
 
-interface IHomeScreen {}
+interface IHomeScreen {
+  navigation: any;
+}
 
-const HomeScreen: React.FC<IHomeScreen> = ({}) => {
+const HomeScreen: React.FC<IHomeScreen> = ({navigation}) => {
   const renderPostList = () => (
     <FlatList
       data={USER_DATA}
+      style={{marginTop: 8}}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{paddingBottom: 60}}
       renderItem={({item}) => <Post userData={item} />}
@@ -24,7 +28,7 @@ const HomeScreen: React.FC<IHomeScreen> = ({}) => {
   return (
     <SafeAreaView>
       <Header />
-      <SearchBar />
+      <SearchBar onPress={() => navigation.navigate(SCREENS.DISCOVERY)} />
       {renderPostList()}
     </SafeAreaView>
   );
