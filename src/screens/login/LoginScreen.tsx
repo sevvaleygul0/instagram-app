@@ -1,19 +1,18 @@
 import React, {useState} from 'react';
 import {View, TextInput, TouchableOpacity, Text} from 'react-native';
 import Image from 'react-native-fast-image';
-import LinearGradient from 'react-native-linear-gradient';
 import * as NavigationService from 'react-navigation-helpers';
 /**
  * ? Local Imports
  */
 import {SCREENS} from '../../shared/constants';
-import styles, {_forgotText} from './LoginScreen.style';
+import styles, {_singupText} from './LoginScreen.style';
 
 interface ILoginScreenProps {}
 
 const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
-  const [usernameValue, setUsernameValue] = useState<string>();
-  const [password, setPassword] = useState<string>();
+  const [usernameValue, setUsernameValue] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const handleLogin = () => NavigationService.navigate(SCREENS.HOME);
 
@@ -24,6 +23,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
   const renderIgLogo = () => (
     <Image
       style={styles.igLogoStyle}
+      tintColor="#111"
       source={require('../../assets/icons/header/ig-logo.png')}
       resizeMode={Image.resizeMode.contain}
     />
@@ -32,8 +32,8 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
   const renderUsernameInput = () => (
     <TextInput
       style={styles.textInputStyle}
-      placeholderTextColor="#fff"
-      placeholder="Username"
+      placeholderTextColor="#878787"
+      placeholder="Phone number, username or email"
       value={usernameValue}
       onChangeText={text => setUsernameValue(text)}
     />
@@ -42,7 +42,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
   const renderPasswordInput = () => (
     <View style={styles.passwordContainer}>
       <TextInput
-        placeholderTextColor="#fff"
+        placeholderTextColor="#878787"
         style={styles.textInputStyle}
         placeholder="Password"
         value={password}
@@ -59,8 +59,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
 
   const renderForgotButton = () => (
     <TouchableOpacity style={styles.forgotButtonStyle}>
-      <Text style={_forgotText()}>Forgot your login details? </Text>
-      <Text style={_forgotText('bold')}>Get help signing in.</Text>
+      <Text style={styles.forgotText}>Forgot password?</Text>
     </TouchableOpacity>
   );
 
@@ -85,18 +84,13 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
 
   const renderSignupButton = () => (
     <TouchableOpacity style={styles.signupButton}>
-      <Text style={_forgotText()}> Don't have an account? </Text>
-      <Text style={_forgotText('bold')}>Sign up.</Text>
+      <Text style={_singupText()}> Don't have an account? </Text>
+      <Text style={_singupText(true)}>Sign up.</Text>
     </TouchableOpacity>
   );
 
   return (
-    <LinearGradient
-      start={{x: 0, y: 0.4}}
-      end={{x: 0.5, y: 1.0}}
-      locations={[0, 0.5, 0.7]}
-      colors={['#BF1573', '#C2296E', '#C83562']}
-      style={styles.linearGradient}>
+    <View style={styles.container}>
       {renderIgLogo()}
       {renderUsernameInput()}
       {renderPasswordInput()}
@@ -105,7 +99,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
       {renderDivider()}
       {renderFacebookLogin()}
       {renderSignupButton()}
-    </LinearGradient>
+    </View>
   );
 };
 

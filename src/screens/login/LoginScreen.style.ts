@@ -2,14 +2,14 @@ import {Dimensions, StyleSheet} from 'react-native';
 
 const ScreenWidth = Dimensions.get('window').width;
 
-export const _forgotText = (bold?: string) => ({
+export const _singupText = (isColor?: boolean) => ({
   fontSize: 13,
-  color: '#EEC1D3',
-  fontFamily: bold ? 'Merriweather-Bold' : 'Merriweather',
+  color: isColor ? '#4AA8CF' : '#A1A1A1',
+  fontFamily: 'Merriweather-Bold',
 });
 
 export default StyleSheet.create({
-  linearGradient: {
+  container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -20,37 +20,41 @@ export default StyleSheet.create({
     marginBottom: 40,
   },
   textInputStyle: {
-    backgroundColor: '#C43F83',
+    backgroundColor: '#EEEEEE',
     width: ScreenWidth * 0.9,
-    height: 60,
-    paddingLeft: 24,
-    fontSize: 16,
-    color: '#EABDD7',
+    height: 40,
+    paddingLeft: 20,
+    fontSize: 11,
+    color: '#878787',
+    borderRadius: 4,
+    borderColor: '#E8E8E8',
+    borderWidth: 1,
     fontFamily: 'Merriweather-Bold',
   },
   passwordContainer: {
     marginTop: 20,
   },
   loginButtonStyle: {
-    borderWidth: 1,
-    borderColor: '#CB568E',
+    borderRadius: 4,
+    backgroundColor: '#5ACCFB',
     width: ScreenWidth * 0.9,
-    height: 65,
+    height: 40,
     marginTop: 24,
     justifyContent: 'center',
     alignItems: 'center',
   },
   loginButtonText: {
-    color: '#CC538C',
-    fontSize: 19,
+    color: '#FAFAFA',
+    fontSize: 12,
     fontFamily: 'Merriweather-Bold',
   },
   forgotButtonStyle: {
-    flexDirection: 'row',
-    marginTop: 24,
+    marginTop: 12,
+    marginLeft: 'auto',
+    right: 20,
   },
   dividerStyle: {
-    backgroundColor: '#EABDD7',
+    backgroundColor: '#CECECE',
     height: 0.2,
     alignSelf: 'center',
     width: ScreenWidth * 0.4,
@@ -64,9 +68,9 @@ export default StyleSheet.create({
   dividerText: {
     alignSelf: 'center',
     paddingHorizontal: 5,
-    color: '#EABDD7',
+    color: '#A1A1A1',
     fontFamily: 'Merriweather-Bold',
-    fontSize: 18,
+    fontSize: 14,
   },
   facebookIcon: {
     width: 25,
@@ -79,8 +83,8 @@ export default StyleSheet.create({
   },
   facebookText: {
     fontFamily: 'Merriweather-Bold',
-    color: '#EABDD7',
-    fontSize: 16,
+    color: '#0098C9',
+    fontSize: 14,
     marginLeft: 8,
   },
   signupButton: {
@@ -91,8 +95,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     height: 75,
-    borderColor: '#EABDD7',
-    backgroundColor: '#CC4468',
+    borderColor: '#CECECE',
     borderTopWidth: 1,
+  },
+  forgotText: {
+    fontSize: 11,
+    color: '#4AA8CF',
+    fontFamily: 'Merriweather-Bold',
   },
 });
