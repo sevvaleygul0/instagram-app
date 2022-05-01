@@ -16,13 +16,28 @@ interface IDiscoveryScreen {}
 
 const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
   const [searchValue, setSearchValue] = useState<string>('');
-  const {setDiscoveryList, discoveryList, fetchDiscoveryList} = useAPI();
+  const {
+    setDiscoveryList,
+    backupDiscoveryList,
+    discoveryList,
+    fetchDiscoveryList,
+  } = useAPI();
 
   const inputRef = useRef();
 
   useEffect(() => {
     fetchDiscoveryList();
   }, []);
+
+  const onChangeSearchText = (text: string) => {
+    const newData: IDiscoveryData[] = backupDiscoveryList.filter(item => {
+      const itemData = item.name ? item.name.toUpperCase() : ''.toUpperCase();
+      const textData = text.toUpperCase();
+      return itemData.indexOf(textData) > -1;
+    });
+    setDiscoveryList(newData);
+    setSearchValue(text);
+  };
 
   /* -------------------------------------------------------------------------- */
   /*                               Render Methods                               */
@@ -39,16 +54,6 @@ const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
       renderItem={({item}) => renderListItem(item)}
     />
   );
-
-  const onChangeSearchText = (text: string) => {
-    const newData: IDiscoveryData[] = discoveryList.filter(item => {
-      const itemData = item.name ? item.name.toUpperCase() : ''.toUpperCase();
-      const textData = text.toUpperCase();
-      return itemData.indexOf(textData) > -1;
-    });
-    setDiscoveryList(newData);
-    setSearchValue(text);
-  };
 
   return (
     <SafeAreaView>

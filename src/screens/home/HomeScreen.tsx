@@ -20,7 +20,7 @@ const HomeScreen: React.FC<IHomeScreen> = ({navigation}) => {
 
   useEffect(() => {
     fetchPostList();
-  }, [postList]);
+  }, []);
 
   /* -------------------------------------------------------------------------- */
   /*                               Render Methods                               */

@@ -7,6 +7,10 @@ const useAPI = () => {
   const [postList, setPostList] = useState<IPostData[]>([]);
   const [discoveryList, setDiscoveryList] = useState<IDiscoveryData[]>([]);
 
+  const [backupDiscoveryList, setBackupDiscoveryList] = useState<
+    IDiscoveryData[]
+  >([]);
+
   const reset = () => {
     setPostList([]);
     setDiscoveryList([]);
@@ -32,7 +36,10 @@ const useAPI = () => {
       axios
         .get(DISCOVERY_DATA_URL)
         .then(response => {
-          response && setDiscoveryList(response.data);
+          if (response) {
+            setBackupDiscoveryList(response.data);
+            setDiscoveryList(response.data);
+          }
         })
         .catch(() => {
           setDiscoveryList([]);
@@ -45,6 +52,7 @@ const useAPI = () => {
   return {
     postList,
     discoveryList,
+    backupDiscoveryList,
     setDiscoveryList,
     reset,
     fetchPostList,
