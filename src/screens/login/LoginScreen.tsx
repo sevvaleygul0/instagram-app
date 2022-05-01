@@ -1,20 +1,21 @@
 import React, {useState} from 'react';
 import {View, TextInput, TouchableOpacity, Text} from 'react-native';
 import Image from 'react-native-fast-image';
-import * as NavigationService from 'react-navigation-helpers';
 /**
  * ? Local Imports
  */
 import {SCREENS} from '../../shared/constants';
 import styles, {_singupText} from './LoginScreen.style';
 
-interface ILoginScreenProps {}
+interface ILoginScreenProps {
+  navigation: any;
+}
 
-const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
+const LoginScreen: React.FC<ILoginScreenProps> = ({navigation}) => {
   const [usernameValue, setUsernameValue] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const handleLogin = () => NavigationService.navigate(SCREENS.HOME);
+  const handleLogin = () => navigation.navigate(SCREENS.HOME);
 
   /* -------------------------------------------------------------------------- */
   /*                               Render Methods                               */

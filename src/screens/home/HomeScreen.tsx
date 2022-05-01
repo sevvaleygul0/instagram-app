@@ -16,7 +16,7 @@ interface IHomeScreen {
 }
 
 const HomeScreen: React.FC<IHomeScreen> = ({navigation}) => {
-  const [postList, setPostList] = useState();
+  const [postList, setPostList] = useState([]);
 
   useEffect(() => {
     fetchPostList();

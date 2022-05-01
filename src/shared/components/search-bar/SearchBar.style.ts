@@ -13,7 +13,7 @@ export default StyleSheet.create({
     backgroundColor: '#e6e6e6',
   },
   searchBarStyle: {
-    fontSize: 12,
+    fontSize: 13,
     width: '95%',
     color: '#111',
     fontFamily: 'Merriweather',

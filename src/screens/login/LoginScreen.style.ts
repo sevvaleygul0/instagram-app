@@ -55,7 +55,7 @@ export default StyleSheet.create({
   },
   dividerStyle: {
     backgroundColor: '#CECECE',
-    height: 0.2,
+    height: 0.8,
     alignSelf: 'center',
     width: ScreenWidth * 0.4,
   },
@@ -94,9 +94,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    height: 75,
-    borderColor: '#CECECE',
-    borderTopWidth: 1,
+    height: 70,
+    borderColor: '#D9D9D9',
+    borderTopWidth: 0.8,
   },
   forgotText: {
     fontSize: 11,
