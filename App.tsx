@@ -1,8 +1,9 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, LogBox} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import Navigation from './src/services/navigation';
+LogBox.ignoreLogs([]);
 
 const App = () => {
   return (

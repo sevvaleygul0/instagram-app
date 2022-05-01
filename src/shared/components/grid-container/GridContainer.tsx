@@ -18,6 +18,7 @@ interface IGridContainerProps {
 
 const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
   const {isVideo, asset} = data;
+  console.log('HERE');
 
   const imageSource =
     asset && DISCOVERY_POST_VIDEOS[asset]

@@ -1,4 +1,4 @@
-import {DISCOVERY_POST_VIDEOS, POST_VIDEO_NAMES} from '..';
+import {POST_VIDEO_NAMES} from '..';
 
 const POST_TYPE = {
   MULTIPLE: 'MULTIPLE',
