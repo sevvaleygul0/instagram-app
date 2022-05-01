@@ -1,5 +1,5 @@
 export const POST_DATA_URL =
-  'https://run.mocky.io/v3/2eacda9f-f10d-4421-9bc5-aca6c298dfa8';
+  'https://run.mocky.io/v3/aa05ae9b-dee9-4ecf-bf2e-7ce42aa8b7ad';
 
 export const DISCOVERY_DATA_URL =
-  'https://run.mocky.io/v3/3cd4ceeb-e63d-4624-96da-13a42937557f';
+  'https://run.mocky.io/v3/14b40900-b1f2-47c9-b652-f69bd15b51f5';
