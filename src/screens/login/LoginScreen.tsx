@@ -2,16 +2,24 @@ import React, {useState} from 'react';
 import {View, TextInput, TouchableOpacity, Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Image from 'react-native-fast-image';
-
+import * as NavigationService from 'react-navigation-helpers';
 /**
  * ? Local Imports
  */
 import styles, {_forgotText} from './LoginScreen.style';
+import {SCREENS} from '../../shared/constants';
 
 interface ILoginScreenProps {}
 
 const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
-  const [usernameValue, setUsernameValue] = useState<any>();
+  const [usernameValue, setUsernameValue] = useState<string>();
+  const [password, setPassword] = useState<string>();
+
+  const handleLogin = () => {
+    console.log('HERE');
+
+    NavigationService.navigate(SCREENS.HOME);
+  };
 
   const renderIgLogo = () => (
     <Image
@@ -26,6 +34,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
       style={styles.textInputStyle}
       placeholderTextColor="#fff"
       placeholder="Username"
+      value={usernameValue}
       onChangeText={text => setUsernameValue(text)}
     />
   );
@@ -36,13 +45,14 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
         placeholderTextColor="#fff"
         style={styles.textInputStyle}
         placeholder="Password"
-        onChangeText={text => setUsernameValue(text)}
+        value={password}
+        onChangeText={text => setPassword(text)}
       />
     </View>
   );
 
   const renderLoginButton = () => (
-    <TouchableOpacity style={styles.loginButtonStyle}>
+    <TouchableOpacity style={styles.loginButtonStyle} onPress={handleLogin}>
       <Text style={styles.loginButtonText}>Log In</Text>
     </TouchableOpacity>
   );
