@@ -6,6 +6,7 @@ export const _singupText = (isColor?: boolean) => ({
   fontSize: 13,
   color: isColor ? '#4AA8CF' : '#A1A1A1',
   fontFamily: 'Merriweather-Bold',
+  marginRight: 8,
 });
 
 export default StyleSheet.create({
@@ -75,6 +76,7 @@ export default StyleSheet.create({
   facebookIcon: {
     width: 25,
     height: 25,
+    marginRight: 8,
   },
   facebookButtonStyle: {
     flexDirection: 'row',

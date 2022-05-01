@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Alert, FlatList, ScrollView, View} from 'react-native';
+import {FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 /**
  * ? Local Imports
  */
 import styles from './DiscoveryScreen.style';
-import useAPI, {fetchDiscoveryData} from '../../services/hook/useApi';
+import useAPI from '../../services/hook/useApi';
 import Header from '../../shared/components/header/Header';
 import {DISCOVERY_DATA} from '../../shared/constants/mock-data';
 import SearchBar from '../../shared/components/search-bar/SearchBar';
@@ -21,8 +21,6 @@ const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
   const inputRef = useRef();
 
   useEffect(() => {
-    console.log('HEY');
-
     fetchDiscoveryList();
   }, []);
 
@@ -43,7 +41,7 @@ const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
   );
 
   const onChangeSearchText = (text: string) => {
-    const newData: IDiscoveryData[] = DISCOVERY_DATA.filter(item => {
+    const newData: IDiscoveryData[] = discoveryList.filter(item => {
       const itemData = item.name ? item.name.toUpperCase() : ''.toUpperCase();
       const textData = text.toUpperCase();
       return itemData.indexOf(textData) > -1;

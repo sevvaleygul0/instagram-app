@@ -13,11 +13,11 @@ interface ILoginScreenProps {
 }
 
 const LoginScreen: React.FC<ILoginScreenProps> = ({navigation}) => {
-  const [usernameValue, setUsernameValue] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [username, setUsername] = useState<string | null>(null);
+  const [password, setPassword] = useState<string | null>(null);
 
   const handleLogin = () => {
-    const userData = {username: usernameValue, password: password};
+    const userData = {username: username, password: password};
     storage.set(LOCAL_STORAGE.USER, JSON.stringify(userData));
     navigation.navigate(SCREENS.HOME);
   };
@@ -40,8 +40,8 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({navigation}) => {
       style={styles.textInputStyle}
       placeholderTextColor="#878787"
       placeholder="Phone number, username or email"
-      value={usernameValue}
-      onChangeText={text => setUsernameValue(text)}
+      value={username}
+      onChangeText={text => setUsername(text)}
     />
   );
 
@@ -84,14 +84,14 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({navigation}) => {
         source={require('../../assets/icons/login/facebook.png')}
         resizeMode={Image.resizeMode.contain}
       />
-      <Text style={styles.facebookText}> Log in with Facebook</Text>
+      <Text style={styles.facebookText}>Log in with Facebook</Text>
     </TouchableOpacity>
   );
 
   const renderSignupButton = () => (
     <TouchableOpacity style={styles.signupButton}>
-      <Text style={_singupText()}> Don't have an account? </Text>
-      <Text style={_singupText(true)}>Sign up.</Text>
+      <Text style={_singupText()}>Don't have an account?</Text>
+      <Text style={_singupText(true)}>Sign up</Text>
     </TouchableOpacity>
   );
 

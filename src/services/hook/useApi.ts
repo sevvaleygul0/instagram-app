@@ -1,6 +1,6 @@
-import {useRef, useState} from 'react';
+import {useState} from 'react';
 import axios from 'axios';
-import {DISCOVERY_DATA_URL, POST_DATA_URL} from '../api/constants';
+import {DISCOVERY_DATA_URL, POST_DATA_URL} from './constants/index';
 import {IDiscoveryData, IPostData} from '../models';
 
 const useAPI = () => {
@@ -17,9 +17,7 @@ const useAPI = () => {
       axios
         .get(POST_DATA_URL)
         .then(response => {
-          if (response) {
-            setPostList(response.data);
-          }
+          response && setPostList(response.data);
         })
         .catch(() => {
           setPostList([]);
@@ -34,9 +32,7 @@ const useAPI = () => {
       axios
         .get(DISCOVERY_DATA_URL)
         .then(response => {
-          if (response) {
-            setDiscoveryList(response.data);
-          }
+          response && setDiscoveryList(response.data);
         })
         .catch(() => {
           setDiscoveryList([]);

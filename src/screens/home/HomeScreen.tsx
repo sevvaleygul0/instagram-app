@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react';
-import {Alert, FlatList} from 'react-native';
+import React, {useEffect} from 'react';
+import {FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 /**
  * ? Local Imports
  */
 import styles from './HomeScreen.style';
 import {SCREENS} from '../../shared/constants';
-import useAPI, {fetchPostData} from '../../services/hook/useApi';
+import useAPI from '../../services/hook/useApi';
 import Post from '../../shared/components/post/Post';
 import Header from '../../shared/components/header/Header';
 import SearchBar from '../../shared/components/search-bar/SearchBar';
@@ -20,7 +20,7 @@ const HomeScreen: React.FC<IHomeScreen> = ({navigation}) => {
 
   useEffect(() => {
     fetchPostList();
-  }, []);
+  }, [postList]);
 
   /* -------------------------------------------------------------------------- */
   /*                               Render Methods                               */

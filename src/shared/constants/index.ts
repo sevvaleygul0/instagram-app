@@ -32,3 +32,8 @@ export const DISCOVERY_POST_VIDEOS: any = {
 export const LOCAL_STORAGE = {
   USER: 'user',
 };
+
+const POST_TYPE = {
+  MULTIPLE: 'MULTIPLE',
+  REELS: 'REELS',
+};
