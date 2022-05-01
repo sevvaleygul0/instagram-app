@@ -182,7 +182,7 @@ export const DISCOVERY_DATA = [
     name: 'Berry Berry',
     country: 'Sweden',
     isVideo: true,
-    asset: POST_VIDEO_NAMES.PHONE,
+    asset: POST_VIDEO_NAMES.CAT,
   },
   {
     id: 12,

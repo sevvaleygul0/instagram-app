@@ -12,10 +12,11 @@ export const DISCOVERY_POST_TYPE_IMAGE: any = {
 export const POST_VIDEO_NAMES = {
   MUSIC: 'MUSIC',
   DOG: 'DOG',
-  SURFING: 'SURFING',
+  CAT: 'CAT',
   PHONE: 'PHONE',
   CITY: 'CITY',
   RIVER: 'RIVER',
+  SURFING: 'SURFING',
 };
 
 export const DISCOVERY_POST_VIDEOS: any = {
@@ -25,4 +26,5 @@ export const DISCOVERY_POST_VIDEOS: any = {
   SURFING: require('../../assets/videos/surfing.mp4'),
   CITY: require('../../assets/videos/city.mp4'),
   RIVER: require('../../assets/videos/river.mp4'),
+  CAT: require('../../assets/videos/cat.mp4'),
 };

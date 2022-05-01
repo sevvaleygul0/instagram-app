@@ -26,7 +26,7 @@ const ImageSwiper: React.FC<IImageSwiperProps> = ({images}) => {
 
   const scrollToInitialPosition = () => {
     try {
-      scrollViewRef.scrollTo({
+      scrollViewRef?.scrollTo({
         x: 0,
       });
     } catch (err) {

@@ -20,10 +20,9 @@ const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
   const inputRef = useRef();
 
   useEffect(() => {
-    setPostList(DISCOVERY_DATA);
-    // fetchDiscoveryData()
-    //   .then((data: any) => data && setPostList(data))
-    //   .catch(() => Alert.alert('Alert', 'Something went wrong 😭'));
+    fetchDiscoveryData()
+      .then((data: any) => data && setPostList(data))
+      .catch(() => Alert.alert('Alert', 'Something went wrong 😭'));
   }, []);
 
   /* -------------------------------------------------------------------------- */
