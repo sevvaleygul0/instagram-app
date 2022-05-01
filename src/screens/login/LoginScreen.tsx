@@ -62,6 +62,16 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
     </View>
   );
 
+  const renderFacebookLogin = () => (
+    <TouchableOpacity style={styles.facebookButtonStyle}>
+      <Image
+        style={styles.facebookIcon}
+        source={require('../../assets/icons/login/facebook.png')}
+        resizeMode={Image.resizeMode.contain}
+      />
+      <Text style={styles.facebookText}> Log in with Facebook</Text>
+    </TouchableOpacity>
+  );
   return (
     <LinearGradient
       start={{x: 0, y: 0.4}}
@@ -75,6 +85,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
       {renderLoginButton()}
       {renderForgotButton()}
       {renderDivider()}
+      {renderFacebookLogin()}
     </LinearGradient>
   );
 };

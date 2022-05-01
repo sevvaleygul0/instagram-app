@@ -68,4 +68,19 @@ export default StyleSheet.create({
     fontFamily: 'Merriweather-Bold',
     fontSize: 18,
   },
+  facebookIcon: {
+    width: 25,
+    height: 25,
+  },
+  facebookButtonStyle: {
+    flexDirection: 'row',
+    marginTop: 36,
+    alignItems: 'center',
+  },
+  facebookText: {
+    fontFamily: 'Merriweather-Bold',
+    color: '#EABDD7',
+    fontSize: 16,
+    marginLeft: 8,
+  },
 });
