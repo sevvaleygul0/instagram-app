@@ -23,7 +23,7 @@ export default StyleSheet.create({
     backgroundColor: '#C43F83',
     width: ScreenWidth * 0.9,
     height: 60,
-    padding: 24,
+    paddingLeft: 24,
     fontSize: 16,
     color: '#EABDD7',
     fontFamily: 'Merriweather-Bold',

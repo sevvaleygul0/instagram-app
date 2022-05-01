@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import Image from 'react-native-fast-image';
 import {
   DISCOVERY_POST_TYPE_IMAGE,
@@ -18,8 +18,6 @@ interface IGridContainerProps {
 
 const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
   const {isVideo, asset} = data;
-  console.log('HERE');
-
   const imageSource =
     asset && DISCOVERY_POST_VIDEOS[asset]
       ? DISCOVERY_POST_VIDEOS[asset]
@@ -30,7 +28,8 @@ const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
       <Video
         onError={(error: any) => console.log('error: ', error)}
         source={imageSource}
-        repeat={true}
+        repeat
+        disableFocus
         resizeMode="cover"
         style={styles.gridImageStyle}
       />

@@ -22,7 +22,7 @@ export interface IImage {
 
 const ImageSwiper: React.FC<IImageSwiperProps> = ({images}) => {
   let scrollViewRef: any = null;
-  const [currentPage, setCurrentPage] = useState<any>();
+  const [currentPage, setCurrentPage] = useState<number>(0);
 
   const scrollToInitialPosition = () => {
     try {
@@ -37,7 +37,10 @@ const ImageSwiper: React.FC<IImageSwiperProps> = ({images}) => {
   const handleOnScroll = (event: any) => {
     // ? calculate screenIndex by contentOffset and screen width
     const newPage = parseInt(
-      event.nativeEvent.contentOffset.x / Dimensions.get('window').width,
+      String(
+        event.nativeEvent.contentOffset.x / Dimensions.get('window').width,
+      ),
+      10,
     );
     if (currentPage !== newPage) {
       setCurrentPage(newPage);
@@ -70,6 +73,9 @@ const ImageSwiper: React.FC<IImageSwiperProps> = ({images}) => {
                     onError={(error: any) => console.log('error: ', error)}
                     source={imageSource}
                     resizeMode="cover"
+                    muted
+                    repeat
+                    disableFocus
                     style={styles.imageStyle}
                   />
                 ) : (

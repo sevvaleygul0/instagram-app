@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    padding: 8,
+    paddingLeft: 8,
     width: '95%',
     marginTop: 16,
     flexDirection: 'row',
@@ -14,7 +14,7 @@ export default StyleSheet.create({
   },
   searchBarStyle: {
     fontSize: 12,
-    paddingLeft: 8,
+    width: '95%',
     color: '#111',
     fontFamily: 'Merriweather',
   },

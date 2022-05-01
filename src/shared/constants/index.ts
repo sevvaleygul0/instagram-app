@@ -15,6 +15,7 @@ export const POST_VIDEO_NAMES = {
   SURFING: 'SURFING',
   PHONE: 'PHONE',
   CITY: 'CITY',
+  RIVER: 'RIVER',
 };
 
 export const DISCOVERY_POST_VIDEOS: any = {
@@ -23,4 +24,5 @@ export const DISCOVERY_POST_VIDEOS: any = {
   PHONE: require('../../assets/videos/phone.mp4'),
   SURFING: require('../../assets/videos/surfing.mp4'),
   CITY: require('../../assets/videos/city.mp4'),
+  RIVER: require('../../assets/videos/river.mp4'),
 };

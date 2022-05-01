@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Alert, FlatList} from 'react-native';
+import {Alert, FlatList, ScrollView, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 /**
  * ? Local Imports
@@ -15,22 +15,22 @@ interface IDiscoveryScreen {}
 
 const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
   const [searchValue, setSearchValue] = useState<any>();
-  const [postList, setPostList] = useState();
+  const [postList, setPostList] = useState([]);
 
   const inputRef = useRef();
 
   useEffect(() => {
-    fetchDiscoveryData()
-      .then((data: any) => data && setPostList(data))
-      .catch(() => Alert.alert('Alert', 'Something went wrong 😭'));
-  });
+    setPostList(DISCOVERY_DATA);
+    // fetchDiscoveryData()
+    //   .then((data: any) => data && setPostList(data))
+    //   .catch(() => Alert.alert('Alert', 'Something went wrong 😭'));
+  }, []);
 
   /* -------------------------------------------------------------------------- */
   /*                               Render Methods                               */
   /* -------------------------------------------------------------------------- */
 
   const renderListItem = (item: any) => <GridContainer data={item} />;
-
   const renderDiscoveryList = () => (
     <FlatList
       style={styles.listStyle}

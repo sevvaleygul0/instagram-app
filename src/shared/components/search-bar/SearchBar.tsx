@@ -30,10 +30,10 @@ const SearchBar: React.FC<ISearchBarProps> = ({
         ref={inputRef}
         placeholder="Search"
         value={value}
+        placeholderTextColor="#fff"
         onFocus={onPress}
         onChangeText={onChangeText}
         style={styles.searchBarStyle}
-        placeholderTextColor="#adadad"
       />
     </View>
   );

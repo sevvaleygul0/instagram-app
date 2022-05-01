@@ -182,7 +182,7 @@ export const DISCOVERY_DATA = [
     name: 'Berry Berry',
     country: 'Sweden',
     isVideo: true,
-    asset: POST_VIDEO_NAMES.SURFING,
+    asset: POST_VIDEO_NAMES.PHONE,
   },
   {
     id: 12,
@@ -219,7 +219,7 @@ export const DISCOVERY_DATA = [
     name: 'Pawel Czerwinski',
     country: 'Germany',
     isVideo: true,
-    asset: POST_VIDEO_NAMES.DOG,
+    asset: POST_VIDEO_NAMES.RIVER,
   },
   {
     id: 17,
