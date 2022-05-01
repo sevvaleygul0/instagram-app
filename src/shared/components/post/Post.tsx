@@ -7,9 +7,10 @@ import Image from 'react-native-fast-image';
  */
 import styles from './Post.style';
 import ImageSwiper from '../image-swiper/ImageSwiper';
+import {IPostData} from '../../../services/models';
 
 interface IPostProps {
-  userData?: any;
+  userData?: IPostData;
   onPressTranslation?: () => void;
 }
 

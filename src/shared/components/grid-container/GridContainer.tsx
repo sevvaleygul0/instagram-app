@@ -11,13 +11,14 @@ import Video from 'react-native-video';
  */
 
 import styles from './GridContiner.style';
+import {IDiscoveryData} from '../../../services/models';
 
 interface IGridContainerProps {
-  data: any;
+  data: IDiscoveryData;
 }
 
 const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
-  const {isVideo, asset} = data;
+  const {isVideo, asset, type} = data;
   const imageSource =
     asset && DISCOVERY_POST_VIDEOS[asset]
       ? DISCOVERY_POST_VIDEOS[asset]
@@ -40,7 +41,7 @@ const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
         resizeMode="cover">
         <Image
           style={styles.gridPostTypeImage}
-          source={DISCOVERY_POST_TYPE_IMAGE[data.type]}
+          source={type && DISCOVERY_POST_TYPE_IMAGE[type]}
           resizeMode="cover"
         />
       </Image>

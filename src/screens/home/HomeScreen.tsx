@@ -6,7 +6,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
  */
 import styles from './HomeScreen.style';
 import {SCREENS} from '../../shared/constants';
-import {fetchPostData} from '../../services/api';
+import useAPI, {fetchPostData} from '../../services/hook/useApi';
 import Post from '../../shared/components/post/Post';
 import Header from '../../shared/components/header/Header';
 import SearchBar from '../../shared/components/search-bar/SearchBar';
@@ -16,17 +16,11 @@ interface IHomeScreen {
 }
 
 const HomeScreen: React.FC<IHomeScreen> = ({navigation}) => {
-  const [postList, setPostList] = useState([]);
+  const {postList, fetchPostList} = useAPI();
 
   useEffect(() => {
     fetchPostList();
   }, []);
-
-  const fetchPostList = () => {
-    fetchPostData()
-      .then((postData: any) => postData && setPostList(postData))
-      .catch(() => Alert.alert('Alert', 'Something went wrong 😭'));
-  };
 
   /* -------------------------------------------------------------------------- */
   /*                               Render Methods                               */
@@ -44,7 +38,7 @@ const HomeScreen: React.FC<IHomeScreen> = ({navigation}) => {
     );
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Header />
       <SearchBar onPress={() => navigation.navigate(SCREENS.DISCOVERY)} />
       {renderPostList()}
