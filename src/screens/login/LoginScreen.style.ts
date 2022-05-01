@@ -83,4 +83,16 @@ export default StyleSheet.create({
     fontSize: 16,
     marginLeft: 8,
   },
+  signupButton: {
+    position: 'absolute',
+    bottom: 0,
+    width: ScreenWidth,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    height: 75,
+    borderColor: '#EABDD7',
+    backgroundColor: '#CC4468',
+    borderTopWidth: 1,
+  },
 });
