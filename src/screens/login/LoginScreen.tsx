@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import {View, TextInput} from 'react-native';
+import {View, TextInput, TouchableOpacity, Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Image from 'react-native-fast-image';
 
 /**
  * ? Local Imports
  */
-import styles from './LoginScreen.style';
+import styles, {_forgotText} from './LoginScreen.style';
 
 interface ILoginScreenProps {}
 
@@ -41,16 +41,40 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
     </View>
   );
 
+  const renderLoginButton = () => (
+    <TouchableOpacity style={styles.loginButtonStyle}>
+      <Text style={styles.loginButtonText}>Log In</Text>
+    </TouchableOpacity>
+  );
+
+  const renderForgotButton = () => (
+    <TouchableOpacity style={styles.forgotButtonStyle}>
+      <Text style={_forgotText()}>Forgot your login details? </Text>
+      <Text style={_forgotText('bold')}>Get help signing in.</Text>
+    </TouchableOpacity>
+  );
+
+  const renderDivider = () => (
+    <View style={styles.dividerContainer}>
+      <View style={styles.dividerStyle} />
+      <Text style={styles.dividerText}>OR</Text>
+      <View style={styles.dividerStyle} />
+    </View>
+  );
+
   return (
     <LinearGradient
       start={{x: 0, y: 0.4}}
       end={{x: 0.5, y: 1.0}}
-      locations={[0, 0.3, 0.7]}
-      colors={['#B71F81', '#C2296E', '#C83562']}
+      locations={[0, 0.5, 0.7]}
+      colors={['#BF1573', '#C2296E', '#C83562']}
       style={styles.linearGradient}>
       {renderIgLogo()}
       {renderUsernameInput()}
       {renderPasswordInput()}
+      {renderLoginButton()}
+      {renderForgotButton()}
+      {renderDivider()}
     </LinearGradient>
   );
 };
