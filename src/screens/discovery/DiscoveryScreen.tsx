@@ -1,15 +1,15 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Alert, FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {fetchDiscoveryData} from '../../services/api';
-import GridContainer from '../../shared/components/grid-container/GridContainer';
-import Header from '../../shared/components/header/Header';
-import SearchBar from '../../shared/components/search-bar/SearchBar';
-import {DISCOVERY_DATA} from '../../shared/constants/mock-data';
 /**
  * ? Local Imports
  */
 import styles from './DiscoveryScreen.style';
+import {fetchDiscoveryData} from '../../services/api';
+import Header from '../../shared/components/header/Header';
+import {DISCOVERY_DATA} from '../../shared/constants/mock-data';
+import SearchBar from '../../shared/components/search-bar/SearchBar';
+import GridContainer from '../../shared/components/grid-container/GridContainer';
 
 interface IDiscoveryScreen {}
 
@@ -21,13 +21,13 @@ const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
 
   useEffect(() => {
     fetchDiscoveryData()
-      .then((data: any) => {
-        data && setPostList(data);
-      })
-      .catch(() => {
-        Alert.alert('Alert', 'Something went wrong');
-      });
+      .then((data: any) => data && setPostList(data))
+      .catch(() => Alert.alert('Alert', 'Something went wrong 😭'));
   });
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Render Methods                               */
+  /* -------------------------------------------------------------------------- */
 
   const renderListItem = (item: any) => <GridContainer data={item} />;
 

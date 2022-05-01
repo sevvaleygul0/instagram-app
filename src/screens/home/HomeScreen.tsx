@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Alert, FlatList} from 'react-native';
+import {Alert, FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 /**
  * ? Local Imports
@@ -7,7 +7,6 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../../shared/components/header/Header';
 import SearchBar from '../../shared/components/search-bar/SearchBar';
 import styles from './HomeScreen.style';
-import {USER_DATA} from '../../shared/constants/mock-data';
 import Post from '../../shared/components/post/Post';
 import {SCREENS} from '../../shared/constants';
 import {fetchPostData} from '../../services/api';
@@ -25,24 +24,22 @@ const HomeScreen: React.FC<IHomeScreen> = ({navigation}) => {
 
   const fetchPostList = () => {
     fetchPostData()
-      .then((postData: any) => {
-        postData && setPostList(postData);
-      })
-      .catch(() => {
-        Alert.alert('Alert', 'Something went wrong');
-      });
+      .then((postData: any) => postData && setPostList(postData))
+      .catch(() => Alert.alert('Alert', 'Something went wrong 😭'));
   };
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Render Methods                               */
+  /* -------------------------------------------------------------------------- */
 
   const renderPostList = () => {
     return (
       <FlatList
         data={postList}
-        style={{marginTop: 8}}
+        style={styles.listStyle}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: 60}}
-        renderItem={({item}) => {
-          return <Post userData={item} />;
-        }}
+        contentContainerStyle={styles.listContentContainer}
+        renderItem={({item}) => <Post userData={item} />}
       />
     );
   };

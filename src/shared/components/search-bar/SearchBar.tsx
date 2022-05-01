@@ -1,10 +1,5 @@
-import React, {useRef} from 'react';
-import {
-  TextInput,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import React from 'react';
+import {TextInput, View} from 'react-native';
 import Image from 'react-native-fast-image';
 /**
  * ? Local Imports

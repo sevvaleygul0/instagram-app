@@ -38,15 +38,7 @@ const Post: React.FC<IPostProps> = ({userData, onPressTranslation}) => {
     </View>
   );
 
-  const renderSwiper = () =>
-    postDetail && (
-      <ImageSwiper
-        imageHeight={350}
-        onSwipeTop={() => alert('onSwipeTop')}
-        onSwipeBottom={() => alert('onSwipeBottom')}
-        images={postDetail}
-      />
-    );
+  const renderSwiper = () => postDetail && <ImageSwiper images={postDetail} />;
 
   const renderIconButtonsContainer = () => (
     <View style={styles.iconButtonsContainer}>
@@ -84,7 +76,7 @@ const Post: React.FC<IPostProps> = ({userData, onPressTranslation}) => {
   const renderLikeNumber = () => (
     <TouchableOpacity style={styles.likeNumberButton}>
       <Text style={styles.likeNumberTextStyle}>
-        {likes?.toString() || null} likes
+        {`${likes?.toString() || 0} likes`}
       </Text>
     </TouchableOpacity>
   );
@@ -107,22 +99,21 @@ const Post: React.FC<IPostProps> = ({userData, onPressTranslation}) => {
       <TouchableOpacity style={styles.addCommentButton}>
         <Text style={styles.addCommentText}>Add a comment...</Text>
       </TouchableOpacity>
-
-      <TouchableOpacity style={{marginLeft: 'auto', paddingRight: 20}}>
+      <TouchableOpacity style={styles.userActionButton}>
         <Image
           style={styles.userActionButtonImage}
           source={require('../../../assets/icons/post/love.png')}
           resizeMode={Image.resizeMode.contain}
         />
       </TouchableOpacity>
-      <TouchableOpacity style={{paddingRight: 20}}>
+      <TouchableOpacity style={styles.raiseHandButton}>
         <Image
           style={styles.userActionButtonImage}
           source={require('../../../assets/icons/post/raise-hand.png')}
           resizeMode={Image.resizeMode.contain}
         />
       </TouchableOpacity>
-      <TouchableOpacity style={{paddingRight: 12}}>
+      <TouchableOpacity style={styles.addButton}>
         <Image
           style={styles.userAddEmojiButton}
           source={require('../../../assets/icons/post/add-comment.png')}

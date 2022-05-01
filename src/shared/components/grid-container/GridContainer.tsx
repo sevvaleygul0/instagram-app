@@ -6,7 +6,6 @@ import {
   DISCOVERY_POST_VIDEOS,
 } from '../../constants';
 import Video from 'react-native-video';
-
 /**
  * ? Local Imports
  */
@@ -47,19 +46,7 @@ const GridContainer: React.FC<IGridContainerProps> = ({data}) => {
       </Image>
     );
 
-  const renderBigContainer = () => (
-    <View style={{width: 50, height: 50}}>
-      <Text style={{fontSize: 5}}>2</Text>
-    </View>
-  );
-
-  return (
-    <TouchableOpacity>
-      {renderSmallContainer()}
-      {/* {renderBigContainer()}
-      {renderSmallContainer()} */}
-    </TouchableOpacity>
-  );
+  return <TouchableOpacity>{renderSmallContainer()}</TouchableOpacity>;
 };
 
 export default GridContainer;

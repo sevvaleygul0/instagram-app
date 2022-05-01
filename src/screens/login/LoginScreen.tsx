@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {View, TextInput, TouchableOpacity, Text} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import Image from 'react-native-fast-image';
+import LinearGradient from 'react-native-linear-gradient';
 import * as NavigationService from 'react-navigation-helpers';
 /**
  * ? Local Imports
  */
-import styles, {_forgotText} from './LoginScreen.style';
 import {SCREENS} from '../../shared/constants';
+import styles, {_forgotText} from './LoginScreen.style';
 
 interface ILoginScreenProps {}
 
@@ -15,11 +15,11 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({}) => {
   const [usernameValue, setUsernameValue] = useState<string>();
   const [password, setPassword] = useState<string>();
 
-  const handleLogin = () => {
-    console.log('HERE');
+  const handleLogin = () => NavigationService.navigate(SCREENS.HOME);
 
-    NavigationService.navigate(SCREENS.HOME);
-  };
+  /* -------------------------------------------------------------------------- */
+  /*                               Render Methods                               */
+  /* -------------------------------------------------------------------------- */
 
   const renderIgLogo = () => (
     <Image

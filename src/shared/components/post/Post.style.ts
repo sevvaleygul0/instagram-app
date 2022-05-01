@@ -114,4 +114,14 @@ export default StyleSheet.create({
     fontFamily: 'Merriweather-Bold',
     fontSize: 10,
   },
+  raiseHandButton: {
+    paddingRight: 20,
+  },
+  userActionButton: {
+    marginLeft: 'auto',
+    paddingRight: 20,
+  },
+  addButton: {
+    paddingRight: 12,
+  },
 });
