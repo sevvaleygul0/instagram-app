@@ -6,7 +6,7 @@ import Image from 'react-native-fast-image';
  * ? Local Imports
  */
 import styles from './Post.style';
-import ImageSwiper from './image-swiper/ImageSwiper';
+import ImageSwiper from '../image-swiper/ImageSwiper';
 
 interface IPostProps {
   userData?: any;

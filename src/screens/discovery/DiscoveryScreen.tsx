@@ -14,7 +14,7 @@ import GridContainer from '../../shared/components/grid-container/GridContainer'
 interface IDiscoveryScreen {}
 
 const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
-  const [searchValue, setSearchValue] = useState<any>();
+  const [searchValue, setSearchValue] = useState<string>('');
   const [postList, setPostList] = useState([]);
 
   const inputRef = useRef();

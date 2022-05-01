@@ -1,7 +1,6 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
 const ScreenWidth = Dimensions.get('window').width;
-const ScreenHeight = Dimensions.get('window').height;
 
 export const _dot = (currentPage: number, index: number) => ({
   height: 6,

@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {Image, ScrollView, Dimensions, View} from 'react-native';
-
 import Video from 'react-native-video';
-import {DISCOVERY_POST_VIDEOS} from '../../../constants';
+/**
+ * ? Local Imports
+ */
+import {DISCOVERY_POST_VIDEOS} from '../../constants';
 /**
  * ? Local Imports
  */
