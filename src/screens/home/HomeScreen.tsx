@@ -4,12 +4,12 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 /**
  * ? Local Imports
  */
-import Header from '../../shared/components/header/Header';
-import SearchBar from '../../shared/components/search-bar/SearchBar';
 import styles from './HomeScreen.style';
-import Post from '../../shared/components/post/Post';
 import {SCREENS} from '../../shared/constants';
 import {fetchPostData} from '../../services/api';
+import Post from '../../shared/components/post/Post';
+import Header from '../../shared/components/header/Header';
+import SearchBar from '../../shared/components/search-bar/SearchBar';
 
 interface IHomeScreen {
   navigation: any;

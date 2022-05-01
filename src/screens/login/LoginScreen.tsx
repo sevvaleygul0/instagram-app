@@ -4,8 +4,9 @@ import Image from 'react-native-fast-image';
 /**
  * ? Local Imports
  */
-import {SCREENS} from '../../shared/constants';
+import {storage} from '../../services/local-storage';
 import styles, {_singupText} from './LoginScreen.style';
+import {LOCAL_STORAGE, SCREENS} from '../../shared/constants';
 
 interface ILoginScreenProps {
   navigation: any;
@@ -15,7 +16,11 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({navigation}) => {
   const [usernameValue, setUsernameValue] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const handleLogin = () => navigation.navigate(SCREENS.HOME);
+  const handleLogin = () => {
+    const userData = {username: usernameValue, password: password};
+    storage.set(LOCAL_STORAGE.USER, JSON.stringify(userData));
+    navigation.navigate(SCREENS.HOME);
+  };
 
   /* -------------------------------------------------------------------------- */
   /*                               Render Methods                               */

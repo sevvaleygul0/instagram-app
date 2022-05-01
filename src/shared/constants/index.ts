@@ -28,3 +28,7 @@ export const DISCOVERY_POST_VIDEOS: any = {
   RIVER: require('../../assets/videos/river.mp4'),
   CAT: require('../../assets/videos/cat.mp4'),
 };
+
+export const LOCAL_STORAGE = {
+  USER: 'user',
+};
