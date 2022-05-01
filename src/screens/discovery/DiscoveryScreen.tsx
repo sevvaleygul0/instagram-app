@@ -7,7 +7,6 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import styles from './DiscoveryScreen.style';
 import useAPI from '../../services/hook/useApi';
 import Header from '../../shared/components/header/Header';
-import {DISCOVERY_DATA} from '../../shared/constants/mock-data';
 import SearchBar from '../../shared/components/search-bar/SearchBar';
 import GridContainer from '../../shared/components/grid-container/GridContainer';
 import {IDiscoveryData} from '../../services/models';
@@ -56,7 +55,7 @@ const DiscoveryScreen: React.FC<IDiscoveryScreen> = ({}) => {
   );
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Header />
       <SearchBar
         inputRef={inputRef}

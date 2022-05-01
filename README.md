@@ -9,13 +9,11 @@
 
 - _Navigation System_
   - React Navigation _V6_
-  - Ready to use Tab Screen with navigation
 - _HTTP Network Management_
   - Axios
-  - API Service with Usage Examples
 - _Local Storage Ready to Use Util Functions_
+  - MMKV Storage
 - _Built-in Custom Font Implementation_
-  - All you need to do is copy-paste the .tff file and run `npx react-native-asset` command
 
 # How to Run the App?
 

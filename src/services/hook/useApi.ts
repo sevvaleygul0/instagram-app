@@ -6,7 +6,6 @@ import {IDiscoveryData, IPostData} from '../models';
 const useAPI = () => {
   const [postList, setPostList] = useState<IPostData[]>([]);
   const [discoveryList, setDiscoveryList] = useState<IDiscoveryData[]>([]);
-
   const [backupDiscoveryList, setBackupDiscoveryList] = useState<
     IDiscoveryData[]
   >([]);

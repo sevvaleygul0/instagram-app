@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, TextInput, TouchableOpacity, Text} from 'react-native';
+import {View, TextInput, TouchableOpacity, Text, Alert} from 'react-native';
 import Image from 'react-native-fast-image';
 /**
  * ? Local Imports
@@ -17,9 +17,11 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({navigation}) => {
   const [password, setPassword] = useState<string | null>(null);
 
   const handleLogin = () => {
-    const userData = {username: username, password: password};
-    storage.set(LOCAL_STORAGE.USER, JSON.stringify(userData));
-    navigation.navigate(SCREENS.HOME);
+    if (username && password) {
+      const userData = {username: username, password: password};
+      storage.set(LOCAL_STORAGE.USER, JSON.stringify(userData));
+      navigation.navigate(SCREENS.HOME);
+    } else Alert.alert('Alert', 'Please enter username & password');
   };
 
   /* -------------------------------------------------------------------------- */
@@ -51,6 +53,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({navigation}) => {
         placeholderTextColor="#878787"
         style={styles.textInputStyle}
         placeholder="Password"
+        secureTextEntry
         value={password}
         onChangeText={text => setPassword(text)}
       />

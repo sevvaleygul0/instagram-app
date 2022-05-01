@@ -40,14 +40,23 @@ const ImageSwiper: React.FC<IImageSwiperProps> = ({images}) => {
     // ? calculate screenIndex by contentOffset and screen width
     const newPage = parseInt(
       String(
-        event.nativeEvent.contentOffset.x / Dimensions.get('window').width,
+        Math.round(event.nativeEvent.contentOffset.x) /
+          Math.round(Dimensions.get('window').width),
       ),
-      10,
     );
     if (currentPage !== newPage) {
       setCurrentPage(newPage);
     }
   };
+
+  const renderPagination = () =>
+    images.length > 1 && (
+      <View style={styles.dotsContainer}>
+        {images.map((_, index) => (
+          <View key={index} style={_dot(currentPage, index)} />
+        ))}
+      </View>
+    );
 
   return (
     <>
@@ -87,13 +96,7 @@ const ImageSwiper: React.FC<IImageSwiperProps> = ({images}) => {
             );
           })}
       </ScrollView>
-      {images.length > 1 && (
-        <View style={styles.dotsContainer}>
-          {images.map((_, _index) => (
-            <View key={_index} style={_dot(currentPage, _index)} />
-          ))}
-        </View>
-      )}
+      {renderPagination()}
     </>
   );
 };

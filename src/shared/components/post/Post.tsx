@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, ActivityIndicator} from 'react-native';
 import Image from 'react-native-fast-image';
 
 /**
@@ -10,7 +10,7 @@ import ImageSwiper from '../image-swiper/ImageSwiper';
 import {IPostData} from '../../../services/models';
 
 interface IPostProps {
-  userData?: IPostData;
+  userData: IPostData;
   onPressTranslation?: () => void;
 }
 
@@ -39,7 +39,8 @@ const Post: React.FC<IPostProps> = ({userData, onPressTranslation}) => {
     </View>
   );
 
-  const renderSwiper = () => postDetail && <ImageSwiper images={postDetail} />;
+  const renderSwiper = () =>
+    postDetail ? <ImageSwiper images={postDetail} /> : <ActivityIndicator />;
 
   const renderIconButtonsContainer = () => (
     <View style={styles.iconButtonsContainer}>
