@@ -1,4 +1,4 @@
-# react-native-instagram-app
+# React Native Instagram App
 
 <p align="center">
   <img alt="React Native Instagram App"
