@@ -2,7 +2,7 @@
 
 <p align="center">
   <img alt="React Native Instagram App"
-        src="assets/app-review.gif" />
+      src="assets/iPhone13.gif"  height="650" />
 </p>
 
 # What's Included?
