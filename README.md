@@ -3,6 +3,8 @@
 <p align="center">
   <img alt="React Native Instagram App"
       src="assets/iPhone13.gif"  height="650" />
+  <img alt="React Native Instagram App"
+      src="assets/iPhone8.gif"  height="650" />
 </p>
 
 # What's Included?
